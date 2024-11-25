@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Industrial Engineer & Data Analyst</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .highlight {
+            color: #e8491d;
+        }
+        .section {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #35424a;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .skill {
+            background: #e8491d;
+            color: #ffffff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #35424a;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        #contact-form button:hover {
+            background: #e8491d;
+        }
+        .experience-slicer {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        .experience-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .experience-item {
+            flex: 0 0 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .experience-item h3 {
+            margin-top: 0;
+        }
+        .toggle-info {
+            background: #e8491d;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .additional-info {
+            display: none;
+            margin-top: 10px;
+        }
+        .slicer-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(53, 66, 74, 0.7);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .slicer-arrow:hover {
+            background: rgba(232, 73, 29, 0.7);
+        }
+        .slicer-arrow.left {
+            left: 0;
+        }
+        .slicer-arrow.right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>John Doe</h1>
+            <p>Industrial Engineer & Data Analyst</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate Industrial Engineer with expertise in data analysis. With over 5 years of experience, I specialize in optimizing processes and deriving actionable insights from complex datasets.</p>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Process Optimization</span>
+                <span class="skill">Python</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">Tableau</span>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <h2>Experience</h2>
+            <div class="experience-slicer">
+                <button class="slicer-arrow left" aria-label="Previous experience">&lt;</button>
+                <div class="experience-container">
+                    <div class="experience-item">
+                        <h3>Senior Data Analyst</h3>
+                        <p>XYZ Corp</p>
+                        <p>2018 - Present</p>
+                        <button class="toggle-info" aria-expanded="false" aria-controls="info-1">+</button>
+                        <div id="info-1" class="additional-info">
+                            <ul>
+                                <li>Led data-driven process improvements resulting in 20% efficiency increase</li>
+                                <li>Developed predictive models for inventory management</li>
+                                <li>Collaborated with cross-functional teams to implement data-driven solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Industrial Engineer</h3>
+                        <p>ABC Manufacturing</p>
+                        <p>2015 - 2018</p>
+                        <button class="toggle-info" aria-expanded="false" aria-controls="info-2">+</button>
+                        <div id="info-2" class="additional-info">
+                            <ul>
+                                <li>Optimized production line layouts, reducing cycle time by 15%</li>
+                                <li>Implemented data collection systems for real-time performance monitoring</li>
+                                <li>Conducted time studies and workflow analyses to identify bottlenecks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Data Analysis Intern</h3>
+                        <p>DEF Industries</p>
+                        <p>2014 - 2015</p>
+                        <button class="toggle-info" aria-expanded="false" aria-controls="info-3">+</button>
+                        <div id="info-3" class="additional-info">
+                            <ul>
+                                <li>Assisted in data collection and analysis for various projects</li>
+                                <li>Created visualizations to present findings to stakeholders</li>
+                                <li>Learned and applied statistical analysis techniques to real-world problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button class="slicer-arrow right" aria-label="Next experience">&gt;</button>
+            </div>
+        </section>
+        
+        <section class="section" id="softskills">
+            <h2>Soft skills</h2>
+            <div class="softskills">
+                <span class="skill">blabla</span>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Experience slicer functionality
+        const slicerContainer = document.querySelector('.experience-container');
+        const experiences = document.querySelectorAll('.experience-item');
+        const prevButton = document.querySelector('.slicer-arrow.left');
+        const nextButton = document.querySelector('.slicer-arrow.right');
+        let currentIndex = 0;
+
+        function updateSlicer() {
+            slicerContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            prevButton.style.display = currentIndex === 0 ? 'none' : 'flex';
+            nextButton.style.display = currentIndex === experiences.length - 1 ? 'none' : 'flex';
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlicer();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < experiences.length - 1) {
+                currentIndex++;
+                updateSlicer();
+            }
+        });
+
+        // Initialize slicer
+        updateSlicer();
+
+        // Toggle info functionality
+        document.querySelectorAll('.toggle-info').forEach(button => {
+            button.addEventListener('click', function() {
+                const infoId = this.getAttribute('aria-controls');
+                const infoElement = document.getElementById(infoId);
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                this.setAttribute('aria-expanded', !isExpanded);
+                this.textContent = isExpanded ? '+' : '-';
+                infoElement.style.display = isExpanded ? 'none' : 'block';
+            });
+        });
+
+        // Simple animation for skills
+        window.addEventListener('load', function() {
+            var skills = document.querySelectorAll('.skill');
+            skills.forEach(function(skill, index) {
+                setTimeout(function() {
+                    skill.style.opacity = '0';
+                    skill.style.transform = 'translateY(20px)';
+                    skill.style.transition = 'opacity 0.5s, transform 0.5s';
+                    setTimeout(function() {
+                        skill.style.opacity = '1';
+                        skill.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
