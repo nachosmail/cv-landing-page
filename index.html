@@ -79,12 +79,13 @@
             box-sizing: border-box;
         }
         .experience-container {
-            display: flex;
-            transition: transform 0.3s ease;
+        display: flex;
+        transition: transform 0.3s ease;
+        overflow: hidden;
         }
         .experience-item {
-            flex: 0 0 100%;
-            padding: 20px;
+            flex: 0 0 calc(33.33% - 20px); /* Mostrar tres experiencias a la vez */
+            margin-right: 20px; /* Espaciado entre items */
             box-sizing: border-box;
         }
         .experience-item h3 {
@@ -154,7 +155,7 @@
                 <span class="skill">BI: QlikSense / Tableau</span>
                 <span class="skill">RPA @ UiPath / Selenium</span>
                 <span class="skill">SAP / Tango / AutoCad</span>
-                <span class="skill">Several trainings like Android Development, Frontend.</span>
+                <span class="skill">Several trainings (Android Development, Frontend)</span>
             </div>
             <h2>Soft Skills</h2>
             <div class="skills">
