@@ -13,7 +13,8 @@
             background-color: #f4f4f4;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
@@ -21,13 +22,12 @@
         header {
             background: #35424a;
             color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding: 20px 0;
             border-bottom: #e8491d 3px solid;
+            text-align: center;
         }
         header h1 {
             margin: 0;
-            text-align: center;
         }
         .highlight {
             color: #e8491d;
@@ -71,22 +71,17 @@
         #contact-form button:hover {
             background: #e8491d;
         }
-        .experience-slicer {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            padding: 0 40px;
-            box-sizing: border-box;
-        }
         .experience-container {
-        display: flex;
-        transition: transform 0.3s ease;
-        overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .experience-item {
-            flex: 0 0 calc(33.33% - 20px); /* Mostrar tres experiencias a la vez */
-            margin-right: 20px; /* Espaciado entre items */
-            box-sizing: border-box;
+            flex: 1 1 calc(100% - 40px); /* Full width on small screens */
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .experience-item h3 {
             margin-top: 0;
@@ -103,32 +98,15 @@
             display: none;
             margin-top: 10px;
         }
-        .slicer-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(53, 66, 74, 0.7);
-            color: #ffffff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
+        @media (min-width: 768px) {
+            .experience-item {
+                flex: 1 1 calc(50% - 40px); /* Two items per row on medium screens */
+            }
         }
-        .slicer-arrow:hover {
-            background: rgba(232, 73, 29, 0.7);
-        }
-        .slicer-arrow.left {
-            left: 0;
-        }
-        .slicer-arrow.right {
-            right: 0;
+        @media (min-width: 1024px) {
+            .experience-item {
+                flex: 1 1 calc(33.33% - 40px); /* Three items per row on large screens */
+            }
         }
     </style>
 </head>
@@ -144,7 +122,6 @@
         <section class="section" id="about">
             <h2>About Me</h2>
             <p>I am a passionate Industrial Engineer with expertise in data analysis. With over 3 years of experience, I specialize in optimizing processes and deriving actionable insights from complex datasets.</p>
-            <p>With a regional team, we developed several BI dashboards or webApps to create or imporove some KPIs. Special focus in cost reduction and visibility of new information </p>
         </section>
 
         <section class="section" id="skills">
@@ -171,122 +148,69 @@
 
         <section class="section" id="languages">
             <h2>Languages</h2>
-                <div class="skills">
-                    <span class="skill">English: Advanced</span>
-                    <span class="skill">Portuguese: Basic</span>
-                </div>
+            <div class="skills">
+                <span class="skill">English: Advanced</span>
+                <span class="skill">Portuguese: Basic</span>
+            </div>
         </section>
 
         <section class="section" id="experience">
             <h2>Experience</h2>
-            <div class="experience-slicer">
-                <button class="slicer-arrow left" aria-label="Previous experience">&lt;</button>
-                <div class="experience-container">
-                    <div class="experience-item">
-                        <h3>SSr Data Analyst | Digital Leader (SMO) </h3>
-                        <p>Pirelli Neumaticos</p>
-                        <p>May-23 - Present</p>
-                        <button class="toggle-info" aria-expanded="false" aria-controls="info-1">+</button>
-                        <div id="info-1" class="additional-info">
-                            <ul>
-                                <li>Projects plan, development and porfit analysis (cost reduction)</li>
-                                <li>Digital infraestructure maintenance</li>
-                                <li>Key users program owner</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Process Engineer SSr</h3>
-                        <p>Pirelli Neumaticos</p>
-                        <p>Aug-19 - Apr-20</p>
-                        <button class="toggle-info" aria-expanded="false" aria-controls="info-2">+</button>
-                        <div id="info-2" class="additional-info">
-                            <ul>
-                                <li>Production line layout, cycle time analysis and management</li>
-                                <li>KPIs - Operational productivity</li>
-                                <li>Documentation & implementation of new or modified activities in plant</li>
-                                <li>New BU start-up & support</li>
-                                <li>Intern program from Aug-19 to nov-20</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <h3>QHSE Intern</h3>
-                        <p>Prysmian Group</p>
-                        <p>Feb-18 - Aug-19</p>
-                        <button class="toggle-info" aria-expanded="false" aria-controls="info-3">+</button>
-                        <div id="info-3" class="additional-info">
-                            <ul>
-                                <li>Documentation & implementation of new or modified activities and global/operative documentation</li>
-                                <li>Quality, environment and safety certification & maintenance activities (ISO 9001, 14001, 45001)</li>
-                                <li>Legal & internal requirements</li>
-                            </ul>
-                        </div>
-
+            <div class="experience-container">
+                <div class="experience-item">
+                    <h3>SSr Data Analyst | Digital Leader (SMO)</h3>
+                    <p>Pirelli Neumaticos</p>
+                    <p>May-23 - Present</p>
+                    <button class="toggle-info">+</button>
+                    <div class="additional-info">
+                        <ul>
+                            <li>Projects plan, development and profit analysis (cost reduction)</li>
+                            <li>Digital infrastructure maintenance</li>
+                            <li>Key users program owner</li>
+                        </ul>
                     </div>
                 </div>
-                <button class="slicer-arrow right" aria-label="Next experience">&gt;</button>
+                <div class="experience-item">
+                    <h3>Process Engineer SSr</h3>
+                    <p>Pirelli Neumaticos</p>
+                    <p>Aug-19 - Apr-20</p>
+                    <button class="toggle-info">+</button>
+                    <div class="additional-info">
+                        <ul>
+                            <li>Production line layout, cycle time analysis and management</li>
+                            <li>KPIs - Operational productivity</li>
+                            <li>Documentation & implementation of new or modified activities in plant</li>
+                            <li>New BU start-up & support</li>
+                            <li>Intern program from Aug-19 to Nov-20</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <h3>QHSE Intern</h3>
+                    <p>Prysmian Group</p>
+                    <p>Feb-18 - Aug-19</p>
+                    <button class="toggle-info">+</button>
+                    <div class="additional-info">
+                        <ul>
+                            <li>Documentation & implementation of new or modified activities and global/operative documentation</li>
+                            <li>Quality, environment and safety certification & maintenance activities (ISO 9001, 14001, 45001)</li>
+                            <li>Legal & internal requirements</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
     <script>
-        const slicerContainer = document.querySelector('.experience-container');
-        const experiences = document.querySelectorAll('.experience-item');
-        const prevButton = document.querySelector('.slicer-arrow.left');
-        const nextButton = document.querySelector('.slicer-arrow.right');
-        const maxVisible = 3; // Máximo número de experiencias visibles
-        let currentIndex = 0;
-
-        function updateSlicer() {
-            slicerContainer.style.transform = `translateX(-${currentIndex * 100 / maxVisible}%)`;
-
-            prevButton.style.display = currentIndex === 0 ? 'none' : 'flex';
-            nextButton.style.display = (currentIndex + maxVisible) >= experiences.length ? 'none' : 'flex';
-        }
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlicer();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if ((currentIndex + maxVisible) < experiences.length) {
-                currentIndex++;
-                updateSlicer();
-            }
-        });
-
-        // Initialize slicer
-        updateSlicer();
-
-        // Toggle info functionality
         document.querySelectorAll('.toggle-info').forEach(button => {
             button.addEventListener('click', function() {
-        const infoId = this.getAttribute('aria-controls');
-        const infoElement = document.getElementById(infoId);
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        
-        // Controlar que solo la información del botón actual se despliegue
-        document.querySelectorAll('.additional-info').forEach(info => {
-            if (info !== infoElement) info.style.display = 'none';
+                const info = this.nextElementSibling;
+                const isExpanded = info.style.display === 'block';
+                info.style.display = isExpanded ? 'none' : 'block';
+                this.textContent = isExpanded ? '+' : '-';
+            });
         });
-
-        document.querySelectorAll('.toggle-info').forEach(btn => {
-            if (btn !== this) {
-                btn.setAttribute('aria-expanded', 'false');
-                btn.textContent = '+';
-            }
-        });
-
-        this.setAttribute('aria-expanded', !isExpanded);
-        this.textContent = isExpanded ? '+' : '-';
-        infoElement.style.display = isExpanded ? 'none' : 'block';
-    });
-});
-
     </script>
 </body>
 </html>
