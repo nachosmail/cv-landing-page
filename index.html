@@ -4,111 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Ignacio Smail</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            border-bottom: #e8491d 3px solid;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .highlight {
-            color: #e8491d;
-        }
-        .section {
-            background: #ffffff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #35424a;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .skill {
-            background: #e8491d;
-            color: #ffffff;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-        }
-        #contact-form input, #contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        #contact-form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #35424a;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-        }
-        #contact-form button:hover {
-            background: #e8491d;
-        }
-        .experience-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .experience-item {
-            flex: 1 1 calc(100% - 40px); /* Full width on small screens */
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .experience-item h3 {
-            margin-top: 0;
-        }
-        .toggle-info {
-            background: #e8491d;
-            color: #ffffff;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-        .additional-info {
-            display: none;
-            margin-top: 10px;
-        }
-        @media (min-width: 768px) {
-            .experience-item {
-                flex: 1 1 calc(50% - 40px); /* Two items per row on medium screens */
-            }
-        }
-        @media (min-width: 1024px) {
-            .experience-item {
-                flex: 1 1 calc(33.33% - 40px); /* Three items per row on large screens */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -202,15 +98,6 @@
         </section>
     </div>
 
-    <script>
-        document.querySelectorAll('.toggle-info').forEach(button => {
-            button.addEventListener('click', function() {
-                const info = this.nextElementSibling;
-                const isExpanded = info.style.display === 'block';
-                info.style.display = isExpanded ? 'none' : 'block';
-                this.textContent = isExpanded ? '+' : '-';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
