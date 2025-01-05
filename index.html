@@ -222,6 +222,7 @@
                                 <li>Legal & internal requirements</li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
                 <button class="slicer-arrow right" aria-label="Next experience">&gt;</button>
@@ -230,17 +231,18 @@
     </div>
 
     <script>
-        // Experience slicer functionality
         const slicerContainer = document.querySelector('.experience-container');
         const experiences = document.querySelectorAll('.experience-item');
         const prevButton = document.querySelector('.slicer-arrow.left');
         const nextButton = document.querySelector('.slicer-arrow.right');
+        const maxVisible = 3; // Máximo número de experiencias visibles
         let currentIndex = 0;
 
         function updateSlicer() {
-            slicerContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            slicerContainer.style.transform = `translateX(-${currentIndex * 100 / maxVisible}%)`;
+
             prevButton.style.display = currentIndex === 0 ? 'none' : 'flex';
-            nextButton.style.display = currentIndex === experiences.length - 1 ? 'none' : 'flex';
+            nextButton.style.display = (currentIndex + maxVisible) >= experiences.length ? 'none' : 'flex';
         }
 
         prevButton.addEventListener('click', () => {
@@ -251,7 +253,7 @@
         });
 
         nextButton.addEventListener('click', () => {
-            if (currentIndex < experiences.length - 1) {
+            if ((currentIndex + maxVisible) < experiences.length) {
                 currentIndex++;
                 updateSlicer();
             }
@@ -263,31 +265,28 @@
         // Toggle info functionality
         document.querySelectorAll('.toggle-info').forEach(button => {
             button.addEventListener('click', function() {
-                const infoId = this.getAttribute('aria-controls');
-                const infoElement = document.getElementById(infoId);
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
-                this.setAttribute('aria-expanded', !isExpanded);
-                this.textContent = isExpanded ? '+' : '-';
-                infoElement.style.display = isExpanded ? 'none' : 'block';
-            });
+        const infoId = this.getAttribute('aria-controls');
+        const infoElement = document.getElementById(infoId);
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Controlar que solo la información del botón actual se despliegue
+        document.querySelectorAll('.additional-info').forEach(info => {
+            if (info !== infoElement) info.style.display = 'none';
         });
 
-        // Simple animation for skills
-        window.addEventListener('load', function() {
-            var skills = document.querySelectorAll('.skill');
-            skills.forEach(function(skill, index) {
-                setTimeout(function() {
-                    skill.style.opacity = '0';
-                    skill.style.transform = 'translateY(20px)';
-                    skill.style.transition = 'opacity 0.5s, transform 0.5s';
-                    setTimeout(function() {
-                        skill.style.opacity = '1';
-                        skill.style.transform = 'translateY(0)';
-                    }, 50);
-                }, index * 100);
-            });
+        document.querySelectorAll('.toggle-info').forEach(btn => {
+            if (btn !== this) {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.textContent = '+';
+            }
         });
+
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.textContent = isExpanded ? '+' : '-';
+        infoElement.style.display = isExpanded ? 'none' : 'block';
+    });
+});
+
     </script>
 </body>
 </html>
