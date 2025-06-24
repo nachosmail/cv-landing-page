@@ -4,6 +4,7 @@ body {
     padding: 0;
     background: linear-gradient(to right, #f4f4f4, #eaeaea);
     color: #333;
+    overflow-x: hidden;
 }
 
 .container {
@@ -31,6 +32,9 @@ header h1 {
     position: absolute;
     top: 20px;
     right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .lang-button {
@@ -39,12 +43,16 @@ header h1 {
     padding: 5px 10px;
     color: #fff;
     cursor: pointer;
-    margin-left: 5px;
     border-radius: 3px;
 }
 
 .lang-button.active {
     background: #393e46;
+}
+
+#carousel-switch-label {
+    color: #ccc;
+    font-size: 0.9rem;
 }
 
 .section {
@@ -98,10 +106,23 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    transition: transform 0.3s ease-in-out;
+}
+
+.experience-container.carousel {
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.experience-container.carousel .experience-item {
+    scroll-snap-align: start;
+    min-width: 300px;
+    flex: 0 0 auto;
 }
 
 .experience-item {
-    flex: 1 1 100%;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -152,13 +173,77 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .experience-item {
+    .experience-container:not(.carousel) .experience-item {
         flex: 1 1 calc(50% - 40px);
     }
 }
 
 @media (min-width: 1024px) {
-    .experience-item {
+    .experience-container:not(.carousel) .experience-item {
         flex: 1 1 calc(33.33% - 40px);
     }
+
+    /* Nuevo layout para experiencia */
+.experience-container.full-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: row;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.experience-left {
+  flex: 1;
+  padding-right: 20px;
+  border-right: 2px solid #e8491d;
+}
+
+.experience-right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.experience-left h3 {
+  margin: 0 0 5px 0;
+  color: #35424a;
+}
+
+.experience-left p {
+  margin: 4px 0;
+}
+
+.experience-right ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.experience-right li {
+  margin-bottom: 8px;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+  }
+
+  .experience-left {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8491d;
+  }
+
+  .experience-right {
+    padding-left: 0;
+  }
+}
+
 }
