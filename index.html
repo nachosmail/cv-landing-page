@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CV Ignacio Smail</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Ignacio Smail</h1>
             <p>Industrial Engineer | Data Analyst</p>
+            <div class="language-toggle">
+                <button id="lang-en" class="lang-button active">EN</button>
+                <button id="lang-es" class="lang-button">ES</button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         <section class="section" id="about">
-            <h2>About Me</h2>
-            <p>I am a passionate Industrial Engineer with expertise in data analysis. With over 3 years of experience, I specialize in optimizing processes and deriving actionable insights from complex datasets.</p>
+            <h2 data-en="About Me" data-es="Sobre mí">About Me</h2>
+            <p 
+            data-en="I am an Industrial Engineering professional with strong experience in process improvement, cost optimization, and industrial digitalization. My journey evolved from internships to a full-time role at Pirelli, focused on automating reports and enhancing operations. Since 2023, I lead Smart Manufacturing initiatives, driving digital transformation across production, quality, maintenance, and engineering. I work with powerful and modern digital tools, enabling scalable solutions through data, automation, and integrated platforms."
+            data-es="Profesional de Ingeniería Industrial con sólida experiencia en mejora de procesos, optimización de costos y digitalización industrial. Mi recorrido fue desde pasantías hasta un rol efectivo en Pirelli, enfocado en automatización de reportes y eficiencia operativa. Desde 2023 lidero iniciativas de Smart Manufacturing, impulsando la transformación digital en producción, calidad, mantenimiento e ingeniería. Trabajo con herramientas digitales modernas y versátiles, que permiten soluciones escalables basadas en datos, automatización y plataformas integradas.">
+                I am a passionate Industrial Engineer with expertise in data analysis. With over 3 years of experience, I specialize in optimizing processes and deriving actionable insights from complex datasets.
+            </p>
         </section>
 
         <section class="section" id="skills">
-            <h2>Hard Skills</h2>
+            <h2 data-en="Hard Skills" data-es="Habilidades Técnicas">Hard Skills</h2>
             <div class="skills">
-                <span class="skill">Python (Pandas and related w/ dataAnalysis) / Selenium</span>
-                <span class="skill">SQL PostgreSQL</span>
-                <span class="skill">BI: QlikSense / Tableau</span>
-                <span class="skill">RPA @ UiPath / Selenium</span>
-                <span class="skill">SAP / Tango / AutoCad</span>
-                <span class="skill">Several trainings (Android Development, Frontend)</span>
+                <span class="skill">Python / Selenium / Pandas</span>
+                <span class="skill">SQL (PostgreSQL)</span>
+                <span class="skill">BI: Qlik Sense / Tableau</span>
+                <span class="skill">RPA: UiPath / Selenium</span>
+                <span class="skill">SAP / Tango / AutoCAD</span>
+                <span class="skill">Android Dev / Frontend (HTML/CSS/JS)</span>
             </div>
-            <h2>Soft Skills</h2>
+
+            <h2 data-en="Soft Skills" data-es="Habilidades Blandas">Soft Skills</h2>
             <div class="skills">
                 <span class="skill">Data Analysis</span>
                 <span class="skill">Process Optimization</span>
                 <span class="skill">Communication</span>
                 <span class="skill">Proactivity</span>
-                <span class="skill">Teamwork and team management</span>
+                <span class="skill">Teamwork & Leadership</span>
                 <span class="skill">Innovation</span>
-                <span class="skill">Agile</span>
+                <span class="skill">Agile Methodologies</span>
             </div>
         </section>
 
         <section class="section" id="languages">
-            <h2>Languages</h2>
+            <h2 data-en="Languages" data-es="Idiomas">Languages</h2>
             <div class="skills">
                 <span class="skill">English: Advanced</span>
                 <span class="skill">Portuguese: Basic</span>
@@ -51,53 +61,54 @@
         </section>
 
         <section class="section" id="experience">
-            <h2>Experience</h2>
+            <h2 data-en="Experience" data-es="Experiencia">Experience</h2>
             <div class="experience-container">
                 <div class="experience-item">
                     <h3>SSr Data Analyst | Digital Leader (SMO)</h3>
-                    <p>Pirelli Neumaticos</p>
-                    <p>May-23 - Present</p>
+                    <p>Pirelli Neumáticos</p>
+                    <p>May 2023 - Present</p>
                     <button class="toggle-info">+</button>
                     <div class="additional-info">
                         <ul>
-                            <li>Projects plan, development and profit analysis (cost reduction)</li>
-                            <li>Digital infrastructure maintenance</li>
-                            <li>Key users program owner</li>
+                            <li>Project planning and profitability analysis</li>
+                            <li>Maintenance of digital infrastructure</li>
+                            <li>Key Users program management</li>
                         </ul>
                     </div>
                 </div>
                 <div class="experience-item">
                     <h3>Process Engineer SSr</h3>
-                    <p>Pirelli Neumaticos</p>
-                    <p>Aug-19 - Apr-23</p>
+                    <p>Pirelli Neumáticos</p>
+                    <p>Aug 2019 - Apr 2023</p>
                     <button class="toggle-info">+</button>
                     <div class="additional-info">
                         <ul>
-                            <li>Production line layout, cycle time analysis and management</li>
-                            <li>KPIs - Operational productivity</li>
-                            <li>Documentation & implementation of new or modified activities in plant</li>
-                            <li>New BU start-up & support</li>
-                            <li>Intern program from Aug-19 to Nov-20</li>
+                            <li>Operational KPI management</li>
+                            <li>Process documentation and implementation</li>
+                            <li>Support for new business units</li>
                         </ul>
                     </div>
                 </div>
                 <div class="experience-item">
                     <h3>QHSE Intern</h3>
                     <p>Prysmian Group</p>
-                    <p>Feb-18 - Aug-19</p>
+                    <p>Feb 2018 - Aug 2019</p>
                     <button class="toggle-info">+</button>
                     <div class="additional-info">
                         <ul>
-                            <li>Documentation & implementation of new or modified activities and global/operative documentation</li>
-                            <li>Quality, environment and safety certification & maintenance activities (ISO 9001, 14001, 45001)</li>
-                            <li>Legal & internal requirements</li>
+                            <li>Support for ISO certification processes</li>
+                            <li>Legal and internal documentation handling</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ignacio Smail</p>
+        </div>
+    </footer>
 </body>
 </html>
