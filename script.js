@@ -15,6 +15,8 @@ document.querySelectorAll('.lang-button').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   const carouselSwitch = document.getElementById('carousel-switch');
   const container = document.querySelector('.experience-container');
+  const themeToggle = document.getElementById('theme-toggle');
+  const contactForm = document.getElementById('contact-form');
   let interval = null;
 
   function startCarousel() {
@@ -46,6 +48,28 @@ document.addEventListener('DOMContentLoaded', () => {
         container.classList.remove('carousel');
         stopCarousel();
       }
+    });
+  }
+
+  if (themeToggle) {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.textContent = '☀️';
+    }
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Message sent!');
+      contactForm.reset();
     });
   }
 });
