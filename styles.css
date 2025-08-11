@@ -37,6 +37,19 @@ header h1 {
     gap: 10px;
 }
 
+.theme-toggle {
+    background: #00adb5;
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.theme-toggle:hover {
+    background: #007a83;
+}
+
 .lang-button {
     background: #00adb5;
     border: none;
@@ -172,6 +185,72 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Contact form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact button {
+    background: #00adb5;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#contact button:hover {
+    background: #007a83;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #1f1f1f;
+    border-bottom-color: #bb86fc;
+}
+
+body.dark-mode .section {
+    background: #1e1e1e;
+}
+
+body.dark-mode .skill {
+    background: #bb86fc;
+}
+
+body.dark-mode .lang-button.active {
+    background: #bb86fc;
+}
+
+body.dark-mode .theme-toggle {
+    background: #bb86fc;
+}
+
+body.dark-mode footer {
+    background: #1f1f1f;
+}
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
 @media (min-width: 768px) {
     .experience-container:not(.carousel) .experience-item {
         flex: 1 1 calc(50% - 40px);
@@ -244,6 +323,4 @@ footer {
   .experience-right {
     padding-left: 0;
   }
-}
 
-}
