@@ -1,0 +1,1173 @@
+/* ========================================================= */
+/* CONFIGURACIÓN GENERAL DEL DOCUMENTO A4                    */
+/* ========================================================= */
+
+:root {
+  --page-width: 210mm;
+  --page-height: 297mm;
+
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-soft: #edf3f8;
+
+  --header-bg: #08111f;
+  --header-bg-soft: #102139;
+
+  --text: #17253a;
+  --text-soft: #50627a;
+  --muted: #73849a;
+
+  --accent: #37d5c7;
+  --accent-dark: #0a8e85;
+  --secondary: #78a8ff;
+
+  --border: #d7e0e9;
+
+  --sidebar-width: 61mm;
+
+  --font-main:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  --font-code:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* ========================================================= */
+/* RESET                                                     */
+/* ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #dfe5eb;
+}
+
+body {
+  min-width: var(--page-width);
+
+  color: var(--text);
+  background: #dfe5eb;
+
+  font-family: var(--font-main);
+  line-height: 1.35;
+
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+ul {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+/* ========================================================= */
+/* CONTROLES DE PANTALLA                                     */
+/* ========================================================= */
+
+.cv-controls {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: min(100%, 1100px);
+
+  margin: 0 auto 18px;
+  padding: 12px 16px;
+
+  background: rgba(8, 17, 31, 0.96);
+
+  border-radius: 0 0 14px 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(10px);
+}
+
+.cv-controls__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-control-button {
+  padding: 8px 12px;
+
+  color: #d9e5f2;
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cv-control-button:hover,
+.cv-control-button.active {
+  color: #04110f;
+  background: var(--accent);
+
+  border-color: var(--accent);
+}
+
+/* ========================================================= */
+/* HOJA A4                                                   */
+/* ========================================================= */
+
+.cv-page {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: var(--page-width);
+  min-height: var(--page-height);
+  height: var(--page-height);
+
+  margin: 0 auto 28px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 18px 55px rgba(32, 49, 69, 0.22);
+}
+
+/* ========================================================= */
+/* CABECERA                                                  */
+/* ========================================================= */
+
+.cv-header {
+  flex: 0 0 auto;
+
+  color: #f7fbff;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(120, 168, 255, 0.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 20% 100%,
+      rgba(55, 213, 199, 0.14),
+      transparent 38%
+    ),
+    var(--header-bg);
+}
+
+.cv-header__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 61mm;
+  align-items: center;
+  gap: 10mm;
+
+  padding: 9mm 11mm 6mm;
+}
+
+.cv-identity {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+}
+
+.cv-monogram {
+  display: grid;
+  place-items: center;
+
+  width: 17mm;
+  height: 17mm;
+
+  flex: 0 0 17mm;
+
+  color: #04110f;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    #85f5eb
+  );
+
+  border-radius: 4mm;
+
+  font-size: 16pt;
+  font-weight: 900;
+  letter-spacing: -0.6pt;
+
+  box-shadow:
+    0 3mm 7mm rgba(55, 213, 199, 0.2);
+}
+
+.cv-kicker {
+  margin-bottom: 1.2mm;
+
+  color: var(--accent);
+
+  font-family: var(--font-code);
+  font-size: 6.5pt;
+  font-weight: 800;
+
+  letter-spacing: 1.2pt;
+}
+
+.cv-identity h1 {
+  margin-bottom: 1.3mm;
+
+  font-size: 26pt;
+  font-weight: 800;
+  letter-spacing: -1pt;
+  line-height: 1;
+}
+
+.cv-professional-title {
+  margin-bottom: 1.2mm;
+
+  color: #ffffff;
+
+  font-size: 10.5pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cv-professional-subtitle {
+  margin-bottom: 0;
+
+  color: #aabbd0;
+
+  font-size: 7.2pt;
+  font-weight: 500;
+}
+
+.cv-header__contact {
+  display: grid;
+  gap: 1.25mm;
+
+  padding-left: 5mm;
+
+  border-left: 0.5mm solid rgba(55, 213, 199, 0.55);
+
+  font-size: 7pt;
+}
+
+.cv-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2mm;
+
+  color: #d6e2ef;
+
+  line-height: 1.25;
+}
+
+.cv-contact-label {
+  min-width: 12mm;
+
+  color: var(--accent);
+
+  font-size: 6pt;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4pt;
+}
+
+.cv-contact-value {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+.cv-contact-value a {
+  color: #ffffff;
+}
+
+.cv-contact-value a:hover {
+  color: var(--accent);
+}
+
+.cv-featured-technologies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8mm;
+
+  min-height: 9mm;
+
+  padding: 2.3mm 11mm 2.6mm;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border-top: 0.2mm solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-featured-technology {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 5.2mm;
+
+  padding: 0.9mm 2mm;
+
+  color: #dffbf8;
+  background: rgba(55, 213, 199, 0.07);
+
+  border: 0.25mm solid rgba(55, 213, 199, 0.24);
+  border-radius: 1.8mm;
+
+  font-family: var(--font-code);
+  font-size: 6.2pt;
+  font-weight: 700;
+}
+
+/* ========================================================= */
+/* CUERPO PRINCIPAL                                          */
+/* ========================================================= */
+
+.cv-body {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+
+  flex: 1 1 auto;
+
+  min-height: 0;
+}
+
+/* ========================================================= */
+/* COLUMNA IZQUIERDA                                         */
+/* ========================================================= */
+
+.cv-sidebar {
+  min-height: 0;
+
+  padding: 6mm 6mm 4mm 8mm;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f0f5f9,
+      #f7f9fc
+    );
+
+  border-right: 0.3mm solid var(--border);
+}
+
+.cv-section {
+  margin-bottom: 4mm;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-section-title,
+.cv-main-title {
+  position: relative;
+
+  margin-bottom: 2.5mm;
+  padding-bottom: 1.4mm;
+
+  color: var(--text);
+
+  font-size: 8.4pt;
+  font-weight: 900;
+
+  letter-spacing: 0.65pt;
+  text-transform: uppercase;
+}
+
+.cv-section-title::after,
+.cv-main-title::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 0.65mm;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    rgba(55, 213, 199, 0.08)
+  );
+
+  border-radius: 1mm;
+}
+
+/* ========================================================= */
+/* PERFIL                                                    */
+/* ========================================================= */
+
+.cv-profile {
+  display: grid;
+  gap: 1.8mm;
+}
+
+.cv-profile p {
+  margin-bottom: 0;
+
+  color: var(--text-soft);
+
+  font-size: 6.7pt;
+  line-height: 1.4;
+}
+
+/* ========================================================= */
+/* GRUPOS DE SKILLS                                          */
+/* ========================================================= */
+
+.cv-skill-groups {
+  display: grid;
+  gap: 2.7mm;
+}
+
+.cv-skill-group {
+  display: grid;
+  gap: 1.2mm;
+}
+
+.cv-skill-group h3 {
+  margin-bottom: 0;
+
+  color: var(--accent-dark);
+
+  font-size: 7pt;
+  font-weight: 800;
+}
+
+.cv-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+}
+
+.cv-skill-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.7mm 1.4mm;
+
+  color: var(--text);
+  background: #ffffff;
+
+  border: 0.2mm solid var(--border);
+  border-radius: 1.3mm;
+
+  font-size: 5.7pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ========================================================= */
+/* LISTA COMPACTA                                            */
+/* ========================================================= */
+
+.cv-compact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1mm;
+
+  margin: 0;
+
+  list-style: none;
+}
+
+.cv-compact-list li {
+  position: relative;
+
+  padding-left: 3mm;
+
+  color: var(--text-soft);
+
+  font-size: 6.35pt;
+  line-height: 1.28;
+}
+
+.cv-compact-list li::before {
+  content: "";
+
+  position: absolute;
+  top: 2.5pt;
+  left: 0;
+
+  width: 1.35mm;
+  height: 1.35mm;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+}
+
+/* ========================================================= */
+/* IDIOMAS                                                   */
+/* ========================================================= */
+
+.cv-language-list {
+  display: grid;
+  gap: 1.1mm;
+}
+
+.cv-language-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+
+  padding-bottom: 0.9mm;
+
+  border-bottom: 0.2mm solid rgba(115, 132, 154, 0.18);
+
+  font-size: 6.35pt;
+}
+
+.cv-language-item:last-child {
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+.cv-language-name {
+  color: var(--text);
+
+  font-weight: 700;
+}
+
+.cv-language-level {
+  color: var(--text-soft);
+
+  text-align: right;
+}
+
+/* ========================================================= */
+/* EDUCACIÓN                                                 */
+/* ========================================================= */
+
+.cv-education-list {
+  display: grid;
+  gap: 1.8mm;
+}
+
+.cv-education-item {
+  display: grid;
+  gap: 0.6mm;
+}
+
+.cv-education-degree {
+  color: var(--text);
+
+  font-size: 6.8pt;
+  font-weight: 800;
+}
+
+.cv-education-institution {
+  color: var(--text-soft);
+
+  font-size: 6.15pt;
+  line-height: 1.28;
+}
+
+.cv-education-status {
+  color: var(--accent-dark);
+
+  font-size: 5.8pt;
+  font-weight: 800;
+}
+
+/* ========================================================= */
+/* COLUMNA DERECHA                                           */
+/* ========================================================= */
+
+.cv-main-content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 6mm 8mm 4mm 8mm;
+
+  background: #ffffff;
+}
+
+.cv-main-section {
+  flex: 0 0 auto;
+}
+
+.cv-main-section + .cv-main-section {
+  margin-top: 5mm;
+}
+
+.cv-main-title {
+  margin-bottom: 3.5mm;
+
+  font-size: 9pt;
+}
+
+/* ========================================================= */
+/* EXPERIENCIA                                               */
+/* ========================================================= */
+
+.cv-experience-list {
+  display: grid;
+  gap: 4.5mm;
+}
+
+.cv-experience-item {
+  position: relative;
+
+  padding-left: 5mm;
+}
+
+.cv-experience-item::before {
+  content: "";
+
+  position: absolute;
+  top: 1.1mm;
+  bottom: 0;
+  left: 0;
+
+  width: 0.55mm;
+
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    rgba(55, 213, 199, 0.12)
+  );
+
+  border-radius: 1mm;
+}
+
+.cv-experience-item::after {
+  content: "";
+
+  position: absolute;
+  top: 1.1mm;
+  left: -1.2mm;
+
+  width: 3mm;
+  height: 3mm;
+
+  background: var(--accent);
+
+  border: 0.7mm solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 0.3mm rgba(55, 213, 199, 0.28);
+}
+
+.cv-experience-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 4mm;
+
+  margin-bottom: 1.6mm;
+}
+
+.cv-experience-role {
+  margin-bottom: 0.7mm;
+
+  color: var(--text);
+
+  font-size: 9.1pt;
+  font-weight: 900;
+  line-height: 1.16;
+}
+
+.cv-experience-company {
+  margin-bottom: 0;
+
+  color: var(--accent-dark);
+
+  font-size: 7pt;
+  font-weight: 800;
+}
+
+.cv-experience-period {
+  padding: 0.9mm 1.7mm;
+
+  color: var(--text-soft);
+  background: var(--surface-soft);
+
+  border: 0.2mm solid var(--border);
+  border-radius: 1.5mm;
+
+  font-size: 5.8pt;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.cv-experience-summary {
+  margin-bottom: 2mm;
+
+  color: var(--text-soft);
+
+  font-size: 6.6pt;
+  font-style: italic;
+}
+
+.cv-achievement-list {
+  display: grid;
+  gap: 1.35mm;
+
+  margin: 0;
+  padding-left: 3.8mm;
+}
+
+.cv-achievement-list li {
+  padding-left: 0.5mm;
+
+  color: var(--text-soft);
+
+  font-size: 6.6pt;
+  line-height: 1.34;
+}
+
+.cv-achievement-list li::marker {
+  color: var(--accent-dark);
+}
+
+.cv-experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+
+  margin-top: 2.2mm;
+}
+
+.cv-experience-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.7mm 1.4mm;
+
+  color: #23465c;
+  background: #eef9f8;
+
+  border: 0.2mm solid #c8ebe8;
+  border-radius: 1.3mm;
+
+  font-size: 5.55pt;
+  font-weight: 750;
+}
+
+/* ========================================================= */
+/* SOLUCIONES DIGITALES                                      */
+/* ========================================================= */
+
+.cv-solutions-section {
+  margin-top: auto;
+}
+
+.cv-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.6mm;
+}
+
+.cv-solution-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 3mm;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5fafc,
+      #edf5f8
+    );
+
+  border: 0.25mm solid #d3e7e7;
+  border-radius: 2.6mm;
+}
+
+.cv-solution-card::after {
+  content: "";
+
+  position: absolute;
+  right: -7mm;
+  bottom: -7mm;
+
+  width: 18mm;
+  height: 18mm;
+
+  background: radial-gradient(
+    circle,
+    rgba(55, 213, 199, 0.15),
+    transparent 68%
+  );
+}
+
+.cv-solution-heading {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5mm;
+
+  margin-bottom: 1.7mm;
+}
+
+.cv-solution-marker {
+  width: 2.2mm;
+  height: 2.2mm;
+
+  flex: 0 0 2.2mm;
+
+  margin-top: 0.8mm;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 0.7mm rgba(55, 213, 199, 0.13);
+}
+
+.cv-solution-title {
+  margin-bottom: 0;
+
+  color: var(--text);
+
+  font-size: 7.2pt;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.cv-solution-description {
+  position: relative;
+  z-index: 1;
+
+  min-height: 24mm;
+
+  margin-bottom: 2mm;
+
+  color: var(--text-soft);
+
+  font-size: 5.9pt;
+  line-height: 1.32;
+}
+
+.cv-solution-technologies {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8mm;
+}
+
+.cv-solution-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.55mm 1mm;
+
+  color: var(--accent-dark);
+  background: #ffffff;
+
+  border: 0.2mm solid #cce5e4;
+  border-radius: 1mm;
+
+  font-family: var(--font-code);
+  font-size: 5pt;
+  font-weight: 800;
+}
+
+/* ========================================================= */
+/* PIE DE PÁGINA                                             */
+/* ========================================================= */
+
+.cv-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+
+  flex: 0 0 auto;
+
+  min-height: 8mm;
+
+  padding: 2mm 8mm;
+
+  color: #b9c7d8;
+  background: var(--header-bg-soft);
+
+  border-top: 0.5mm solid var(--accent);
+
+  font-size: 5.8pt;
+}
+
+.cv-footer p {
+  margin: 0;
+}
+
+#cv-footer-text {
+  font-weight: 700;
+}
+
+#cv-footer-language {
+  color: var(--accent);
+
+  font-family: var(--font-code);
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* ========================================================= */
+/* MODOS COMPACTOS                                           */
+/* ========================================================= */
+
+.cv-page.compact .cv-header__main {
+  padding-top: 7.5mm;
+  padding-bottom: 4.8mm;
+}
+
+.cv-page.compact .cv-featured-technologies {
+  padding-top: 1.8mm;
+  padding-bottom: 2mm;
+}
+
+.cv-page.compact .cv-sidebar,
+.cv-page.compact .cv-main-content {
+  padding-top: 4.8mm;
+  padding-bottom: 3mm;
+}
+
+.cv-page.compact .cv-section {
+  margin-bottom: 3.2mm;
+}
+
+.cv-page.compact .cv-experience-list {
+  gap: 3.5mm;
+}
+
+.cv-page.compact .cv-achievement-list {
+  gap: 1mm;
+}
+
+.cv-page.compact .cv-achievement-list li {
+  font-size: 6.3pt;
+}
+
+.cv-page.compact .cv-profile p {
+  font-size: 6.35pt;
+}
+
+.cv-page.compact .cv-skill-tag {
+  font-size: 5.4pt;
+}
+
+.cv-page.compact .cv-main-section + .cv-main-section {
+  margin-top: 3.5mm;
+}
+
+.cv-page.compact .cv-solution-description {
+  min-height: 21mm;
+
+  font-size: 5.6pt;
+}
+
+.cv-page.extra-compact .cv-header__main {
+  padding-top: 6mm;
+  padding-bottom: 4mm;
+}
+
+.cv-page.extra-compact .cv-featured-technologies {
+  padding-top: 1.5mm;
+  padding-bottom: 1.5mm;
+}
+
+.cv-page.extra-compact .cv-sidebar,
+.cv-page.extra-compact .cv-main-content {
+  padding-top: 4mm;
+  padding-bottom: 2.5mm;
+}
+
+.cv-page.extra-compact .cv-section {
+  margin-bottom: 2.5mm;
+}
+
+.cv-page.extra-compact .cv-section-title,
+.cv-page.extra-compact .cv-main-title {
+  margin-bottom: 1.8mm;
+}
+
+.cv-page.extra-compact .cv-profile p {
+  font-size: 6.1pt;
+}
+
+.cv-page.extra-compact .cv-skill-groups {
+  gap: 2mm;
+}
+
+.cv-page.extra-compact .cv-experience-list {
+  gap: 2.8mm;
+}
+
+.cv-page.extra-compact .cv-achievement-list {
+  gap: 0.75mm;
+}
+
+.cv-page.extra-compact .cv-achievement-list li {
+  font-size: 6pt;
+  line-height: 1.28;
+}
+
+.cv-page.extra-compact .cv-experience-technologies {
+  margin-top: 1.5mm;
+}
+
+.cv-page.extra-compact .cv-main-section + .cv-main-section {
+  margin-top: 2.5mm;
+}
+
+.cv-page.extra-compact .cv-solution-card {
+  padding: 2.3mm;
+}
+
+.cv-page.extra-compact .cv-solution-description {
+  min-height: 18mm;
+
+  font-size: 5.35pt;
+}
+
+.cv-page.extra-compact .cv-solution-title {
+  font-size: 6.8pt;
+}
+
+.cv-page.extra-compact .cv-footer {
+  min-height: 7mm;
+}
+
+/* ========================================================= */
+/* IMPRESIÓN                                                 */
+/* ========================================================= */
+
+@media print {
+  html,
+  body {
+    width: var(--page-width);
+    height: var(--page-height);
+
+    background: #ffffff;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  [data-print-hidden] {
+    display: none !important;
+  }
+
+  .cv-page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    height: var(--page-height);
+
+    margin: 0;
+
+    box-shadow: none;
+
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* ========================================================= */
+/* PANTALLAS PEQUEÑAS                                        */
+/* ========================================================= */
+
+@media screen and (max-width: 900px) {
+  body {
+    min-width: 0;
+  }
+
+  .cv-controls {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    border-radius: 0;
+  }
+
+  .cv-page {
+    transform-origin: top center;
+  }
+}
+
+.cv-contact-item:has(a[href*="github.io"]) {
+  margin-top: 1mm;
+  font-size: 8pt;
+  font-weight: 800;
+}
+
+.cv-contact-item:has(a[href*="github.io"]) .cv-contact-value a {
+  color: var(--accent);
+}

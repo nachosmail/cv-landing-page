@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Curriculum Vitae of Ignacio Smail"
+  />
+
+  <title>Ignacio Smail CV</title>
+
+  <link rel="stylesheet" href="cv.css" />
+
+  <script
+    type="module"
+    src="cv.js"
+  ></script>
+</head>
+
+<body>
+  <!-- ===================================================== -->
+  <!-- CONTROLES DE VISTA                                    -->
+  <!-- No se imprimen en el PDF                              -->
+  <!-- ===================================================== -->
+
+  <div
+    class="cv-controls"
+    data-print-hidden
+  >
+    <div class="cv-controls__group">
+
+      <button
+        type="button"
+        class="cv-control-button active"
+        data-language-button="en"
+      >
+        English
+      </button>
+
+      <button
+        type="button"
+        class="cv-control-button"
+        data-language-button="es"
+      >
+        Español
+      </button>
+
+    </div>
+
+    <div class="cv-controls__group">
+
+      <button
+        type="button"
+        class="cv-control-button"
+        id="print-cv-button"
+      >
+        Print / Save PDF
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- PÁGINA A4                                             -->
+  <!-- ===================================================== -->
+
+  <main
+    class="cv-page"
+    id="cv-page"
+  >
+
+    <!-- =================================================== -->
+    <!-- CABECERA                                            -->
+    <!-- =================================================== -->
+
+    <header class="cv-header">
+
+      <div class="cv-header__main">
+
+        <div class="cv-identity">
+
+          <div
+            class="cv-monogram"
+            aria-hidden="true"
+          >
+            IS
+          </div>
+
+          <div>
+
+            <p class="cv-kicker">
+              CURRICULUM VITAE
+            </p>
+
+            <h1 id="cv-name">
+              Ignacio Smail
+            </h1>
+
+            <p
+              class="cv-professional-title"
+              id="cv-professional-title"
+            >
+              Data & Digital Solutions Analyst | Project Leader
+            </p>
+
+            <p
+              class="cv-professional-subtitle"
+              id="cv-professional-subtitle"
+            >
+              Industrial Engineering · Data · Automation · Business Intelligence
+            </p>
+
+          </div>
+        </div>
+
+        <div
+          class="cv-header__contact"
+          id="cv-header-contact"
+        >
+          <!-- Se completa desde cv.js -->
+        </div>
+
+      </div>
+
+      <div
+        class="cv-featured-technologies"
+        id="cv-featured-technologies"
+      >
+        <!-- Se completa desde cv.js -->
+      </div>
+
+    </header>
+
+    <!-- =================================================== -->
+    <!-- CUERPO PRINCIPAL                                    -->
+    <!-- =================================================== -->
+
+    <div class="cv-body">
+
+      <!-- ================================================= -->
+      <!-- COLUMNA IZQUIERDA                                 -->
+      <!-- ================================================= -->
+
+      <aside class="cv-sidebar">
+
+        <!-- PERFIL -->
+
+        <section class="cv-section">
+
+          <h2
+            class="cv-section-title"
+            id="profile-section-title"
+          >
+            Professional Profile
+          </h2>
+
+          <div
+            class="cv-profile"
+            id="cv-profile"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+        <!-- STACK PRINCIPAL -->
+
+        <section class="cv-section">
+
+          <h2
+            class="cv-section-title"
+            id="skills-section-title"
+          >
+            Core Stack
+          </h2>
+
+          <div
+            class="cv-skill-groups"
+            id="cv-skill-groups"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+        <!-- GESTIÓN Y NEGOCIO -->
+
+        <section class="cv-section">
+
+          <h2
+            class="cv-section-title"
+            id="leadership-section-title"
+          >
+            Project & Business Skills
+          </h2>
+
+          <ul
+            class="cv-compact-list"
+            id="cv-leadership-skills"
+          >
+            <!-- Se completa desde cv.js -->
+          </ul>
+
+        </section>
+
+        <!-- IDIOMAS -->
+
+        <section class="cv-section">
+
+          <h2
+            class="cv-section-title"
+            id="languages-section-title"
+          >
+            Languages
+          </h2>
+
+          <div
+            class="cv-language-list"
+            id="cv-languages"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+        <!-- EDUCACIÓN -->
+
+        <section class="cv-section">
+
+          <h2
+            class="cv-section-title"
+            id="education-section-title"
+          >
+            Education
+          </h2>
+
+          <div
+            class="cv-education-list"
+            id="cv-education"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+      </aside>
+
+      <!-- ================================================= -->
+      <!-- COLUMNA DERECHA                                   -->
+      <!-- ================================================= -->
+
+      <section class="cv-main-content">
+
+        <!-- EXPERIENCIA -->
+
+        <section class="cv-main-section">
+
+          <h2
+            class="cv-main-title"
+            id="experience-section-title"
+          >
+            Professional Experience
+          </h2>
+
+          <div
+            class="cv-experience-list"
+            id="cv-experience-list"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+        <!-- SOLUCIONES DIGITALES DESTACADAS -->
+
+        <section
+          class="cv-main-section cv-solutions-section"
+          id="cv-solutions-section"
+        >
+
+          <h2
+            class="cv-main-title"
+            id="solutions-section-title"
+          >
+            Selected Digital Solutions
+          </h2>
+
+          <div
+            class="cv-solutions-grid"
+            id="cv-solutions-grid"
+          >
+            <!-- Se completa desde cv.js -->
+          </div>
+
+        </section>
+
+      </section>
+
+    </div>
+
+    <!-- =================================================== -->
+    <!-- PIE DE PÁGINA                                       -->
+    <!-- =================================================== -->
+
+    <footer class="cv-footer">
+
+      <p id="cv-footer-text">
+        Data · Automation · Business Intelligence · Digital Solutions · Project Leadership
+      </p>
+
+      <p id="cv-footer-language">
+        English version
+      </p>
+
+    </footer>
+
+  </main>
+</body>
+</html>

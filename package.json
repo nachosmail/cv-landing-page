@@ -1,0 +1,15 @@
+{
+  "name": "ignacio-smail-cv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web portfolio and automated PDF CV generator for Ignacio Smail.",
+  "type": "module",
+  "scripts": {
+    "generate:cv": "node scripts/generate-cv.js",
+    "generate:cv:es": "node scripts/generate-cv.js es",
+    "generate:cv:en": "node scripts/generate-cv.js en"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}
