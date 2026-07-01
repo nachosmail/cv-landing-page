@@ -1,0 +1,492 @@
+:root {
+  --page-width: 210mm;
+  --page-height: 297mm;
+
+  --header-bg: #08111f;
+  --header-bg-soft: #102139;
+
+  --text: #17253a;
+  --text-soft: #50627a;
+  --muted: #73849a;
+
+  --accent: #37d5c7;
+  --accent-dark: #0a8e85;
+  --border: #d7e0e9;
+
+  --font-main:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  --font-code:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #dfe5eb;
+}
+
+body {
+  min-width: var(--page-width);
+
+  color: var(--text);
+  background: #dfe5eb;
+
+  font-family: var(--font-main);
+  line-height: 1.5;
+
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+p,
+h1,
+h2 {
+  margin-top: 0;
+}
+
+/* ========================================================= */
+/* CONTROLES                                                 */
+/* ========================================================= */
+
+.cover-controls {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: min(100%, 1100px);
+
+  margin: 0 auto 18px;
+  padding: 12px 16px;
+
+  background: rgba(8, 17, 31, 0.96);
+
+  border-radius: 0 0 14px 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.cover-controls__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cover-control-button {
+  padding: 8px 12px;
+
+  color: #d9e5f2;
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cover-control-button:hover,
+.cover-control-button.active {
+  color: #04110f;
+  background: var(--accent);
+
+  border-color: var(--accent);
+}
+
+/* ========================================================= */
+/* HOJA A4                                                   */
+/* ========================================================= */
+
+.cover-page {
+  display: flex;
+  flex-direction: column;
+
+  width: var(--page-width);
+  min-height: var(--page-height);
+  height: var(--page-height);
+
+  margin: 0 auto 28px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 55px rgba(32, 49, 69, 0.22);
+}
+
+/* ========================================================= */
+/* CABECERA                                                  */
+/* ========================================================= */
+
+.cover-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 62mm;
+  align-items: center;
+  gap: 10mm;
+
+  padding: 11mm 12mm 9mm;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(120, 168, 255, 0.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 20% 100%,
+      rgba(55, 213, 199, 0.14),
+      transparent 38%
+    ),
+    var(--header-bg);
+}
+
+.cover-header__identity {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+}
+
+.cover-monogram {
+  display: grid;
+  place-items: center;
+
+  width: 17mm;
+  height: 17mm;
+
+  flex: 0 0 17mm;
+
+  color: #04110f;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    #85f5eb
+  );
+
+  border-radius: 4mm;
+
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.cover-kicker {
+  margin-bottom: 1.2mm;
+
+  color: var(--accent);
+
+  font-family: var(--font-code);
+  font-size: 6.5pt;
+  font-weight: 800;
+
+  letter-spacing: 1.2pt;
+}
+
+.cover-header h1 {
+  margin-bottom: 1.3mm;
+
+  font-size: 26pt;
+  font-weight: 800;
+  letter-spacing: -1pt;
+  line-height: 1;
+}
+
+.cover-professional-title {
+  margin-bottom: 1.2mm;
+
+  font-size: 10.5pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cover-professional-subtitle {
+  margin-bottom: 0;
+
+  color: #aabbd0;
+
+  font-size: 7.2pt;
+}
+
+.cover-contact {
+  display: grid;
+  gap: 1.5mm;
+
+  padding-left: 5mm;
+
+  border-left: 0.5mm solid rgba(55, 213, 199, 0.55);
+
+  font-size: 7pt;
+}
+
+.cover-contact-item {
+  display: flex;
+  gap: 2mm;
+
+  color: #d6e2ef;
+}
+
+.cover-contact-label {
+  min-width: 12mm;
+
+  color: var(--accent);
+
+  font-size: 6pt;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.cover-contact-value {
+  overflow-wrap: anywhere;
+}
+
+.cover-contact-value a {
+  color: #ffffff;
+}
+
+/* ========================================================= */
+/* CUERPO                                                     */
+/* ========================================================= */
+
+.cover-body {
+  flex: 1 1 auto;
+
+  padding: 13mm 18mm 10mm;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20mm;
+
+  margin-bottom: 9mm;
+}
+
+.cover-date-block,
+.cover-recipient-block {
+  display: grid;
+  gap: 1.2mm;
+
+  color: var(--text-soft);
+
+  font-size: 9pt;
+}
+
+.cover-meta-label {
+  color: var(--accent-dark);
+
+  font-size: 6.8pt;
+  font-weight: 900;
+
+  letter-spacing: 0.8pt;
+  text-transform: uppercase;
+}
+
+.cover-recipient-block strong {
+  color: var(--text);
+
+  font-size: 9.4pt;
+}
+
+.cover-subject {
+  margin-bottom: 8mm;
+  padding-bottom: 4mm;
+
+  border-bottom: 0.5mm solid var(--border);
+}
+
+.cover-subject h2 {
+  margin: 1.5mm 0 0;
+
+  color: var(--text);
+
+  font-size: 15pt;
+  line-height: 1.25;
+}
+
+.cover-letter-content {
+  display: grid;
+  gap: 5mm;
+}
+
+.cover-letter-content p {
+  margin: 0;
+
+  color: var(--text-soft);
+
+  font-size: 9.4pt;
+  line-height: 1.65;
+}
+
+.cover-signature {
+  margin-top: 10mm;
+
+  color: var(--text);
+}
+
+.cover-signature p {
+  margin-bottom: 3mm;
+
+  color: var(--text-soft);
+
+  font-size: 9.4pt;
+}
+
+.cover-signature strong {
+  font-size: 12pt;
+}
+
+/* ========================================================= */
+/* FOOTER                                                    */
+/* ========================================================= */
+
+.cover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8mm;
+
+  min-height: 10mm;
+
+  padding: 2.5mm 12mm;
+
+  color: #b9c7d8;
+  background: var(--header-bg-soft);
+
+  border-top: 0.5mm solid var(--accent);
+
+  font-size: 6.2pt;
+}
+
+.cover-footer a {
+  color: var(--accent);
+
+  font-weight: 800;
+}
+
+.cover-footer span {
+  font-family: var(--font-code);
+}
+
+/* ========================================================= */
+/* MODO COMPACTO                                             */
+/* ========================================================= */
+
+.cover-page.compact .cover-header {
+  padding-top: 8mm;
+  padding-bottom: 7mm;
+}
+
+.cover-page.compact .cover-body {
+  padding-top: 9mm;
+  padding-bottom: 7mm;
+}
+
+.cover-page.compact .cover-meta {
+  margin-bottom: 6mm;
+}
+
+.cover-page.compact .cover-subject {
+  margin-bottom: 5mm;
+}
+
+.cover-page.compact .cover-letter-content {
+  gap: 3.5mm;
+}
+
+.cover-page.compact .cover-letter-content p {
+  font-size: 8.8pt;
+  line-height: 1.5;
+}
+
+.cover-page.compact .cover-signature {
+  margin-top: 6mm;
+}
+
+/* ========================================================= */
+/* IMPRESIÓN                                                 */
+/* ========================================================= */
+
+@media print {
+  html,
+  body {
+    width: var(--page-width);
+    height: var(--page-height);
+
+    background: #ffffff;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  [data-print-hidden] {
+    display: none !important;
+  }
+
+  .cover-page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    height: var(--page-height);
+
+    margin: 0;
+
+    box-shadow: none;
+
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    min-width: 0;
+  }
+
+  .cover-controls {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    border-radius: 0;
+  }
+}

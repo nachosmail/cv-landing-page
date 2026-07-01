@@ -884,6 +884,70 @@ const commandShortcuts =
 const currentYear =
   document.getElementById("current-year");
 
+const viewCvLink =
+  document.getElementById("view-cv-link");
+
+const downloadCvLink =
+  document.getElementById("download-cv-link");
+
+const viewCoverLetterLink =
+  document.getElementById("view-cover-letter-link");
+
+const downloadCoverLetterLink =
+  document.getElementById("download-cover-letter-link");
+
+const viewCvText =
+  document.getElementById("view-cv-text");
+
+const downloadCvText =
+  document.getElementById("download-cv-text");
+
+const viewCoverLetterText =
+  document.getElementById("view-cover-letter-text");
+
+const downloadCoverLetterText =
+  document.getElementById("download-cover-letter-text");
+
+const documentMenus =
+  document.querySelectorAll(".document-menu");
+
+documentMenus.forEach((menu) => {
+  const trigger =
+    menu.querySelector(".document-menu-trigger");
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    documentMenus.forEach((otherMenu) => {
+      if (otherMenu !== menu) {
+        otherMenu.classList.remove("open");
+
+        otherMenu
+          .querySelector(".document-menu-trigger")
+          .setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const isOpen =
+      menu.classList.toggle("open");
+
+    trigger.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+  });
+});
+
+document.addEventListener("click", () => {
+  documentMenus.forEach((menu) => {
+    menu.classList.remove("open");
+
+    menu
+      .querySelector(".document-menu-trigger")
+      .setAttribute("aria-expanded", "false");
+  });
+});
+
 /* ========================================================= */
 /* IDIOMA                                                    */
 /* ========================================================= */
@@ -935,6 +999,7 @@ function setLanguage(language) {
   });
 
   updateDocumentTitle(language);
+  updateDocumentLinks(language);
   resetTerminal();
 }
 
@@ -1185,7 +1250,7 @@ function initializeActiveNavigation() {
           link.classList.toggle(
             "active",
             linkedSection ===
-              `#${currentSectionId}`
+            `#${currentSectionId}`
           );
         });
       },
@@ -1390,3 +1455,36 @@ document.addEventListener(
   "DOMContentLoaded",
   initializeApplication
 );
+
+function updateDocumentLinks(language) {
+  const isSpanish =
+    language === "es";
+
+  viewCvLink.href =
+    `cv/?lang=${language}`;
+
+  downloadCvLink.href =
+    isSpanish
+      ? "dist/Ignacio-Smail-CV-ES.pdf"
+      : "dist/Ignacio-Smail-CV-EN.pdf";
+
+  viewCoverLetterLink.href =
+    `cover-letter/?lang=${language}`;
+
+  downloadCoverLetterLink.href =
+    isSpanish
+      ? "dist/Ignacio-Smail-Cover-Letter-ES.pdf"
+      : "dist/Ignacio-Smail-Cover-Letter-EN.pdf";
+
+  viewCvText.textContent =
+    isSpanish ? "Ver" : "View";
+
+  downloadCvText.textContent =
+    isSpanish ? "Descargar" : "Download";
+
+  viewCoverLetterText.textContent =
+    isSpanish ? "Ver" : "View";
+
+  downloadCoverLetterText.textContent =
+    isSpanish ? "Descargar" : "Download";
+}

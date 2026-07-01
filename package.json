@@ -7,7 +7,11 @@
   "scripts": {
     "generate:cv": "node scripts/generate-cv.js",
     "generate:cv:es": "node scripts/generate-cv.js es",
-    "generate:cv:en": "node scripts/generate-cv.js en"
+    "generate:cv:en": "node scripts/generate-cv.js en",
+    "generate:cover-letter": "node scripts/generate-cover-letter.js",
+"generate:cover-letter:es": "node scripts/generate-cover-letter.js es",
+"generate:cover-letter:en": "node scripts/generate-cover-letter.js en"
+    
   },
   "devDependencies": {
     "playwright": "^1.61.1"

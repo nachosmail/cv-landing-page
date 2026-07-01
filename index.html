@@ -73,6 +73,74 @@
 
       <div class="header-actions">
 
+<div class="document-actions">
+
+  <div class="document-menu">
+    <button
+      type="button"
+      class="document-menu-trigger"
+      aria-expanded="false"
+    >
+      CV
+      <span aria-hidden="true">▾</span>
+    </button>
+
+    <div class="document-menu-dropdown">
+      <a
+        id="view-cv-link"
+        href="cv/?lang=en"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span aria-hidden="true">👁</span>
+        <span id="view-cv-text">View</span>
+      </a>
+
+      <a
+        id="download-cv-link"
+        href="dist/Ignacio-Smail-CV-EN.pdf"
+        download
+      >
+        <span aria-hidden="true">⬇</span>
+        <span id="download-cv-text">Download</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="document-menu">
+    <button
+      type="button"
+      class="document-menu-trigger"
+      aria-expanded="false"
+    >
+      Cover Letter
+      <span aria-hidden="true">▾</span>
+    </button>
+
+    <div class="document-menu-dropdown">
+      <a
+        id="view-cover-letter-link"
+        href="cover-letter/?lang=en"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span aria-hidden="true">👁</span>
+        <span id="view-cover-letter-text">View</span>
+      </a>
+
+      <a
+        id="download-cover-letter-link"
+        href="dist/Ignacio-Smail-Cover-Letter-EN.pdf"
+        download
+      >
+        <span aria-hidden="true">⬇</span>
+        <span id="download-cover-letter-text">Download</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
         <div class="language-selector" aria-label="Language selector">
           <button class="language-button active" type="button" data-language="en">
             EN
@@ -1104,8 +1172,24 @@
             Download CV in English
           </a>
 
+          <a class="button button-secondary" href="dist/Ignacio-Smail-Cover-Letter-ES.pdf" download>
+            Descargar cover letter
+          </a>
+
+          <a class="button button-secondary" href="dist/Ignacio-Smail-Cover-Letter-EN.pdf" download>
+            Download cover letter
+          </a>
+
           <a class="button button-primary" href="mailto:ignacio.smail@yahoo.com.ar" data-i18n="emailButton">
             Send email
+          </a>
+
+          <a class="button button-secondary" href="cover-letter/?lang=es" target="_blank" rel="noopener noreferrer">
+            Ver cover letter
+          </a>
+
+          <a class="button button-secondary" href="cover-letter/?lang=en" target="_blank" rel="noopener noreferrer">
+            View cover letter
           </a>
 
           <!--
