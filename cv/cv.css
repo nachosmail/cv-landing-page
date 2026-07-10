@@ -208,9 +208,9 @@ ul {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 61mm;
   align-items: center;
-  gap: 10mm;
+  gap: 9mm;
 
-  padding: 9mm 11mm 6mm;
+  padding: 8mm 11mm 5mm;
 }
 
 .cv-identity {
@@ -247,12 +247,12 @@ ul {
 }
 
 .cv-kicker {
-  margin-bottom: 1.2mm;
+  margin-bottom: 1.1mm;
 
   color: var(--accent);
 
   font-family: var(--font-code);
-  font-size: 6.5pt;
+  font-size: 6.7pt;
   font-weight: 800;
 
   letter-spacing: 1.2pt;
@@ -261,18 +261,18 @@ ul {
 .cv-identity h1 {
   margin-bottom: 1.3mm;
 
-  font-size: 26pt;
+  font-size: 27pt;
   font-weight: 800;
   letter-spacing: -1pt;
   line-height: 1;
 }
 
 .cv-professional-title {
-  margin-bottom: 1.2mm;
+  margin-bottom: 1.1mm;
 
   color: #ffffff;
 
-  font-size: 10.5pt;
+  font-size: 11pt;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -282,41 +282,41 @@ ul {
 
   color: #aabbd0;
 
-  font-size: 7.2pt;
+  font-size: 7.5pt;
   font-weight: 500;
 }
 
 .cv-header__contact {
   display: grid;
-  gap: 1.25mm;
+  gap: 1.05mm;
 
-  padding-left: 5mm;
+  padding-left: 4.5mm;
 
   border-left: 0.5mm solid rgba(55, 213, 199, 0.55);
 
-  font-size: 7pt;
+  font-size: 7.4pt;
 }
 
 .cv-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 2mm;
+  gap: 1.7mm;
 
   color: #d6e2ef;
 
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .cv-contact-label {
-  min-width: 12mm;
+  min-width: 11.5mm;
 
   color: var(--accent);
 
-  font-size: 6pt;
+  font-size: 6.2pt;
   font-weight: 800;
 
   text-transform: uppercase;
-  letter-spacing: 0.4pt;
+  letter-spacing: 0.35pt;
 }
 
 .cv-contact-value {
@@ -333,15 +333,25 @@ ul {
   color: var(--accent);
 }
 
+.cv-contact-item:has(a[href*="github.io"]) {
+  margin-top: 1mm;
+  font-size: 8.4pt;
+  font-weight: 800;
+}
+
+.cv-contact-item:has(a[href*="github.io"]) .cv-contact-value a {
+  color: var(--accent);
+}
+
 .cv-featured-technologies {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.8mm;
+  gap: 1.6mm;
 
-  min-height: 9mm;
+  min-height: 8.5mm;
 
-  padding: 2.3mm 11mm 2.6mm;
+  padding: 2mm 11mm 2.3mm;
 
   background: rgba(255, 255, 255, 0.045);
 
@@ -354,7 +364,7 @@ ul {
 
   min-height: 5.2mm;
 
-  padding: 0.9mm 2mm;
+  padding: 0.85mm 1.9mm;
 
   color: #dffbf8;
   background: rgba(55, 213, 199, 0.07);
@@ -363,7 +373,7 @@ ul {
   border-radius: 1.8mm;
 
   font-family: var(--font-code);
-  font-size: 6.2pt;
+  font-size: 6.5pt;
   font-weight: 700;
 }
 
@@ -387,7 +397,7 @@ ul {
 .cv-sidebar {
   min-height: 0;
 
-  padding: 6mm 6mm 4mm 8mm;
+  padding: 5.2mm 5.4mm 3.4mm 7.4mm;
 
   background:
     linear-gradient(
@@ -400,7 +410,7 @@ ul {
 }
 
 .cv-section {
-  margin-bottom: 4mm;
+  margin-bottom: 3.25mm;
 }
 
 .cv-section:last-child {
@@ -411,15 +421,15 @@ ul {
 .cv-main-title {
   position: relative;
 
-  margin-bottom: 2.5mm;
-  padding-bottom: 1.4mm;
+  margin-bottom: 2mm;
+  padding-bottom: 1.1mm;
 
   color: var(--text);
 
-  font-size: 8.4pt;
+  font-size: 9pt;
   font-weight: 900;
 
-  letter-spacing: 0.65pt;
+  letter-spacing: 0.6pt;
   text-transform: uppercase;
 }
 
@@ -449,7 +459,7 @@ ul {
 
 .cv-profile {
   display: grid;
-  gap: 1.8mm;
+  gap: 1.35mm;
 }
 
 .cv-profile p {
@@ -457,8 +467,8 @@ ul {
 
   color: var(--text-soft);
 
-  font-size: 6.7pt;
-  line-height: 1.4;
+  font-size: 7.55pt;
+  line-height: 1.33;
 }
 
 /* ========================================================= */
@@ -467,12 +477,12 @@ ul {
 
 .cv-skill-groups {
   display: grid;
-  gap: 2.7mm;
+  gap: 2.05mm;
 }
 
 .cv-skill-group {
   display: grid;
-  gap: 1.2mm;
+  gap: 0.9mm;
 }
 
 .cv-skill-group h3 {
@@ -480,21 +490,21 @@ ul {
 
   color: var(--accent-dark);
 
-  font-size: 7pt;
+  font-size: 7.55pt;
   font-weight: 800;
 }
 
 .cv-skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1mm;
+  gap: 0.75mm;
 }
 
 .cv-skill-tag {
   display: inline-flex;
   align-items: center;
 
-  padding: 0.7mm 1.4mm;
+  padding: 0.6mm 1.15mm;
 
   color: var(--text);
   background: #ffffff;
@@ -502,9 +512,9 @@ ul {
   border: 0.2mm solid var(--border);
   border-radius: 1.3mm;
 
-  font-size: 5.7pt;
+  font-size: 6.25pt;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 /* ========================================================= */
@@ -514,7 +524,7 @@ ul {
 .cv-compact-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1mm;
+  gap: 0.7mm;
 
   margin: 0;
 
@@ -528,15 +538,15 @@ ul {
 
   color: var(--text-soft);
 
-  font-size: 6.35pt;
-  line-height: 1.28;
+  font-size: 7.35pt;
+  line-height: 1.2;
 }
 
 .cv-compact-list li::before {
   content: "";
 
   position: absolute;
-  top: 2.5pt;
+  top: 2.6pt;
   left: 0;
 
   width: 1.35mm;
@@ -553,7 +563,7 @@ ul {
 
 .cv-language-list {
   display: grid;
-  gap: 1.1mm;
+  gap: 0.75mm;
 }
 
 .cv-language-item {
@@ -562,11 +572,11 @@ ul {
   justify-content: space-between;
   gap: 4mm;
 
-  padding-bottom: 0.9mm;
+  padding-bottom: 0.7mm;
 
   border-bottom: 0.2mm solid rgba(115, 132, 154, 0.18);
 
-  font-size: 6.35pt;
+  font-size: 7.3pt;
 }
 
 .cv-language-item:last-child {
@@ -593,32 +603,32 @@ ul {
 
 .cv-education-list {
   display: grid;
-  gap: 1.8mm;
+  gap: 1.25mm;
 }
 
 .cv-education-item {
   display: grid;
-  gap: 0.6mm;
+  gap: 0.4mm;
 }
 
 .cv-education-degree {
   color: var(--text);
 
-  font-size: 6.8pt;
+  font-size: 7.4pt;
   font-weight: 800;
 }
 
 .cv-education-institution {
   color: var(--text-soft);
 
-  font-size: 6.15pt;
-  line-height: 1.28;
+  font-size: 7.15pt;
+  line-height: 1.22;
 }
 
 .cv-education-status {
   color: var(--accent-dark);
 
-  font-size: 5.8pt;
+  font-size: 7pt;
   font-weight: 800;
 }
 
@@ -633,7 +643,7 @@ ul {
   min-width: 0;
   min-height: 0;
 
-  padding: 6mm 8mm 4mm 8mm;
+  padding: 5.2mm 7.3mm 3.4mm 7.3mm;
 
   background: #ffffff;
 }
@@ -643,13 +653,13 @@ ul {
 }
 
 .cv-main-section + .cv-main-section {
-  margin-top: 5mm;
+  margin-top: 3.5mm;
 }
 
 .cv-main-title {
-  margin-bottom: 3.5mm;
+  margin-bottom: 2.8mm;
 
-  font-size: 9pt;
+  font-size: 10pt;
 }
 
 /* ========================================================= */
@@ -658,24 +668,33 @@ ul {
 
 .cv-experience-list {
   display: grid;
-  gap: 4.5mm;
+  gap: 3.4mm;
 }
 
 .cv-experience-item {
   position: relative;
 
-  padding-left: 5mm;
+  padding: 3mm 3mm 3mm 5.2mm;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(55, 213, 199, 0.055),
+      rgba(255, 255, 255, 0)
+    );
+
+  border-radius: 2.4mm;
 }
 
 .cv-experience-item::before {
   content: "";
 
   position: absolute;
-  top: 1.1mm;
-  bottom: 0;
+  top: 1.3mm;
+  bottom: 1.3mm;
   left: 0;
 
-  width: 0.55mm;
+  width: 0.65mm;
 
   background: linear-gradient(
     180deg,
@@ -690,11 +709,11 @@ ul {
   content: "";
 
   position: absolute;
-  top: 1.1mm;
-  left: -1.2mm;
+  top: 2.1mm;
+  left: -1.25mm;
 
-  width: 3mm;
-  height: 3mm;
+  width: 3.2mm;
+  height: 3.2mm;
 
   background: var(--accent);
 
@@ -709,19 +728,19 @@ ul {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
-  gap: 4mm;
+  gap: 3mm;
 
-  margin-bottom: 1.6mm;
+  margin-bottom: 1.35mm;
 }
 
 .cv-experience-role {
-  margin-bottom: 0.7mm;
+  margin-bottom: 0.6mm;
 
   color: var(--text);
 
-  font-size: 9.1pt;
-  font-weight: 900;
-  line-height: 1.16;
+  font-size: 10.45pt;
+  font-weight: 950;
+  line-height: 1.12;
 }
 
 .cv-experience-company {
@@ -729,12 +748,12 @@ ul {
 
   color: var(--accent-dark);
 
-  font-size: 7pt;
-  font-weight: 800;
+  font-size: 7.95pt;
+  font-weight: 850;
 }
 
 .cv-experience-period {
-  padding: 0.9mm 1.7mm;
+  padding: 0.7mm 1.35mm;
 
   color: var(--text-soft);
   background: var(--surface-soft);
@@ -742,36 +761,37 @@ ul {
   border: 0.2mm solid var(--border);
   border-radius: 1.5mm;
 
-  font-size: 5.8pt;
-  font-weight: 800;
+  font-size: 6.75pt;
+  font-weight: 850;
 
   white-space: nowrap;
 }
 
 .cv-experience-summary {
-  margin-bottom: 2mm;
+  margin-bottom: 1.5mm;
 
   color: var(--text-soft);
 
-  font-size: 6.6pt;
+  font-size: 7.65pt;
   font-style: italic;
+  line-height: 1.25;
 }
 
 .cv-achievement-list {
   display: grid;
-  gap: 1.35mm;
+  gap: 0.9mm;
 
   margin: 0;
-  padding-left: 3.8mm;
+  padding-left: 3.5mm;
 }
 
 .cv-achievement-list li {
-  padding-left: 0.5mm;
+  padding-left: 0.45mm;
 
   color: var(--text-soft);
 
-  font-size: 6.6pt;
-  line-height: 1.34;
+  font-size: 7.55pt;
+  line-height: 1.27;
 }
 
 .cv-achievement-list li::marker {
@@ -781,16 +801,16 @@ ul {
 .cv-experience-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 1mm;
+  gap: 0.75mm;
 
-  margin-top: 2.2mm;
+  margin-top: 1.55mm;
 }
 
 .cv-experience-tag {
   display: inline-flex;
   align-items: center;
 
-  padding: 0.7mm 1.4mm;
+  padding: 0.55mm 1.1mm;
 
   color: #23465c;
   background: #eef9f8;
@@ -798,8 +818,8 @@ ul {
   border: 0.2mm solid #c8ebe8;
   border-radius: 1.3mm;
 
-  font-size: 5.55pt;
-  font-weight: 750;
+  font-size: 6.25pt;
+  font-weight: 800;
 }
 
 /* ========================================================= */
@@ -813,7 +833,7 @@ ul {
 .cv-solutions-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.6mm;
+  gap: 2mm;
 }
 
 .cv-solution-card {
@@ -821,7 +841,7 @@ ul {
 
   min-width: 0;
 
-  padding: 3mm;
+  padding: 2.25mm;
 
   overflow: hidden;
 
@@ -859,16 +879,16 @@ ul {
 
   display: flex;
   align-items: flex-start;
-  gap: 1.5mm;
+  gap: 1.2mm;
 
-  margin-bottom: 1.7mm;
+  margin-bottom: 1.2mm;
 }
 
 .cv-solution-marker {
-  width: 2.2mm;
-  height: 2.2mm;
+  width: 2mm;
+  height: 2mm;
 
-  flex: 0 0 2.2mm;
+  flex: 0 0 2mm;
 
   margin-top: 0.8mm;
 
@@ -885,23 +905,23 @@ ul {
 
   color: var(--text);
 
-  font-size: 7.2pt;
+  font-size: 7.55pt;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.14;
 }
 
 .cv-solution-description {
   position: relative;
   z-index: 1;
 
-  min-height: 24mm;
+  min-height: 20mm;
 
-  margin-bottom: 2mm;
+  margin-bottom: 1.4mm;
 
   color: var(--text-soft);
 
-  font-size: 5.9pt;
-  line-height: 1.32;
+  font-size: 6.05pt;
+  line-height: 1.22;
 }
 
 .cv-solution-technologies {
@@ -910,14 +930,14 @@ ul {
 
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8mm;
+  gap: 0.6mm;
 }
 
 .cv-solution-tag {
   display: inline-flex;
   align-items: center;
 
-  padding: 0.55mm 1mm;
+  padding: 0.4mm 0.8mm;
 
   color: var(--accent-dark);
   background: #ffffff;
@@ -926,7 +946,7 @@ ul {
   border-radius: 1mm;
 
   font-family: var(--font-code);
-  font-size: 5pt;
+  font-size: 5.15pt;
   font-weight: 800;
 }
 
@@ -942,16 +962,16 @@ ul {
 
   flex: 0 0 auto;
 
-  min-height: 8mm;
+  min-height: 7.2mm;
 
-  padding: 2mm 8mm;
+  padding: 1.7mm 8mm;
 
   color: #b9c7d8;
   background: var(--header-bg-soft);
 
   border-top: 0.5mm solid var(--accent);
 
-  font-size: 5.8pt;
+  font-size: 6.05pt;
 }
 
 .cv-footer p {
@@ -976,125 +996,197 @@ ul {
 /* ========================================================= */
 
 .cv-page.compact .cv-header__main {
-  padding-top: 7.5mm;
-  padding-bottom: 4.8mm;
+  padding-top: 7mm;
+  padding-bottom: 4mm;
 }
 
 .cv-page.compact .cv-featured-technologies {
-  padding-top: 1.8mm;
-  padding-bottom: 2mm;
+  padding-top: 1.6mm;
+  padding-bottom: 1.7mm;
 }
 
 .cv-page.compact .cv-sidebar,
 .cv-page.compact .cv-main-content {
-  padding-top: 4.8mm;
-  padding-bottom: 3mm;
+  padding-top: 4.3mm;
+  padding-bottom: 2.6mm;
 }
 
 .cv-page.compact .cv-section {
-  margin-bottom: 3.2mm;
+  margin-bottom: 2.7mm;
+}
+
+.cv-page.compact .cv-section-title,
+.cv-page.compact .cv-main-title {
+  margin-bottom: 1.6mm;
 }
 
 .cv-page.compact .cv-experience-list {
-  gap: 3.5mm;
+  gap: 2.6mm;
+}
+
+.cv-page.compact .cv-experience-item {
+  padding-top: 2.4mm;
+  padding-bottom: 2.4mm;
+}
+
+.cv-page.compact .cv-experience-role {
+  font-size: 9.8pt;
+}
+
+.cv-page.compact .cv-experience-company {
+  font-size: 7.45pt;
+}
+
+.cv-page.compact .cv-experience-summary {
+  font-size: 7.15pt;
+  line-height: 1.22;
 }
 
 .cv-page.compact .cv-achievement-list {
-  gap: 1mm;
+  gap: 0.7mm;
 }
 
 .cv-page.compact .cv-achievement-list li {
-  font-size: 6.3pt;
+  font-size: 6.85pt;
+  line-height: 1.22;
 }
 
 .cv-page.compact .cv-profile p {
-  font-size: 6.35pt;
+  font-size: 7.1pt;
+}
+
+.cv-page.compact .cv-skill-groups {
+  gap: 1.7mm;
 }
 
 .cv-page.compact .cv-skill-tag {
-  font-size: 5.4pt;
+  font-size: 5.85pt;
+}
+
+.cv-page.compact .cv-compact-list li,
+.cv-page.compact .cv-language-item,
+.cv-page.compact .cv-education-degree,
+.cv-page.compact .cv-education-institution,
+.cv-page.compact .cv-education-status {
+  font-size: 6.85pt;
 }
 
 .cv-page.compact .cv-main-section + .cv-main-section {
-  margin-top: 3.5mm;
+  margin-top: 2.6mm;
+}
+
+.cv-page.compact .cv-solution-card {
+  padding: 2mm;
 }
 
 .cv-page.compact .cv-solution-description {
-  min-height: 21mm;
+  min-height: 18mm;
 
-  font-size: 5.6pt;
+  font-size: 5.75pt;
+}
+
+.cv-page.compact .cv-solution-title {
+  font-size: 7.05pt;
 }
 
 .cv-page.extra-compact .cv-header__main {
-  padding-top: 6mm;
-  padding-bottom: 4mm;
+  padding-top: 5.8mm;
+  padding-bottom: 3.6mm;
 }
 
 .cv-page.extra-compact .cv-featured-technologies {
-  padding-top: 1.5mm;
-  padding-bottom: 1.5mm;
+  padding-top: 1.3mm;
+  padding-bottom: 1.3mm;
 }
 
 .cv-page.extra-compact .cv-sidebar,
 .cv-page.extra-compact .cv-main-content {
-  padding-top: 4mm;
-  padding-bottom: 2.5mm;
+  padding-top: 3.5mm;
+  padding-bottom: 2.1mm;
 }
 
 .cv-page.extra-compact .cv-section {
-  margin-bottom: 2.5mm;
+  margin-bottom: 2.1mm;
 }
 
 .cv-page.extra-compact .cv-section-title,
 .cv-page.extra-compact .cv-main-title {
-  margin-bottom: 1.8mm;
+  margin-bottom: 1.4mm;
 }
 
 .cv-page.extra-compact .cv-profile p {
-  font-size: 6.1pt;
+  font-size: 6.65pt;
+  line-height: 1.22;
 }
 
 .cv-page.extra-compact .cv-skill-groups {
-  gap: 2mm;
+  gap: 1.5mm;
+}
+
+.cv-page.extra-compact .cv-skill-tag {
+  font-size: 5.5pt;
 }
 
 .cv-page.extra-compact .cv-experience-list {
-  gap: 2.8mm;
+  gap: 2mm;
+}
+
+.cv-page.extra-compact .cv-experience-item {
+  padding-top: 2mm;
+  padding-bottom: 2mm;
+}
+
+.cv-page.extra-compact .cv-experience-role {
+  font-size: 9.25pt;
+}
+
+.cv-page.extra-compact .cv-experience-company {
+  font-size: 7.1pt;
+}
+
+.cv-page.extra-compact .cv-experience-summary {
+  font-size: 6.85pt;
+  line-height: 1.2;
 }
 
 .cv-page.extra-compact .cv-achievement-list {
-  gap: 0.75mm;
+  gap: 0.55mm;
 }
 
 .cv-page.extra-compact .cv-achievement-list li {
-  font-size: 6pt;
-  line-height: 1.28;
+  font-size: 6.45pt;
+  line-height: 1.18;
 }
 
 .cv-page.extra-compact .cv-experience-technologies {
-  margin-top: 1.5mm;
+  margin-top: 1mm;
+}
+
+.cv-page.extra-compact .cv-experience-tag {
+  font-size: 5.8pt;
 }
 
 .cv-page.extra-compact .cv-main-section + .cv-main-section {
-  margin-top: 2.5mm;
+  margin-top: 2mm;
 }
 
 .cv-page.extra-compact .cv-solution-card {
-  padding: 2.3mm;
+  padding: 1.8mm;
 }
 
 .cv-page.extra-compact .cv-solution-description {
-  min-height: 18mm;
+  min-height: 15mm;
 
   font-size: 5.35pt;
+  line-height: 1.18;
 }
 
 .cv-page.extra-compact .cv-solution-title {
-  font-size: 6.8pt;
+  font-size: 6.7pt;
 }
 
 .cv-page.extra-compact .cv-footer {
-  min-height: 7mm;
+  min-height: 6.8mm;
 }
 
 /* ========================================================= */
@@ -1141,33 +1233,301 @@ ul {
 /* ========================================================= */
 /* PANTALLAS PEQUEÑAS                                        */
 /* ========================================================= */
-
 @media screen and (max-width: 900px) {
+  html,
   body {
+    width: 100%;
     min-width: 0;
+
+    overflow-x: hidden;
+
+    background: #dfe5eb;
+  }
+
+  body {
+    padding: 0;
   }
 
   .cv-controls {
-    position: relative;
+    position: sticky;
+    top: 0;
 
     width: 100%;
 
-    margin-bottom: 12px;
+    margin: 0;
+    padding: 10px 12px;
 
     border-radius: 0;
   }
 
-  .cv-page {
-    transform-origin: top center;
+  .cv-controls__group {
+    flex-wrap: wrap;
   }
-}
 
-.cv-contact-item:has(a[href*="github.io"]) {
-  margin-top: 1mm;
-  font-size: 8pt;
-  font-weight: 800;
-}
+  .cv-control-button {
+    padding: 7px 10px;
 
-.cv-contact-item:has(a[href*="github.io"]) .cv-contact-value a {
-  color: var(--accent);
+    font-size: 0.74rem;
+  }
+
+  .cv-page {
+    width: calc(100% - 20px);
+    height: auto;
+    min-height: 0;
+
+    margin: 10px auto 24px;
+
+    overflow: visible;
+
+    transform: none;
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 12px 36px rgba(32, 49, 69, 0.22);
+  }
+
+  .cv-header__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    padding: 24px 20px 18px;
+  }
+
+  .cv-identity {
+    align-items: flex-start;
+  }
+
+  .cv-monogram {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+
+    border-radius: 14px;
+
+    font-size: 1.25rem;
+  }
+
+  .cv-identity h1 {
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .cv-professional-title {
+    font-size: 1rem;
+  }
+
+  .cv-professional-subtitle {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .cv-header__contact {
+    padding-left: 0;
+
+    border-left: 0;
+    border-top: 1px solid rgba(55, 213, 199, 0.35);
+
+    padding-top: 14px;
+
+    font-size: 0.82rem;
+  }
+
+  .cv-contact-item {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 8px;
+
+    line-height: 1.3;
+  }
+
+  .cv-contact-label {
+    min-width: 0;
+
+    font-size: 0.68rem;
+  }
+
+  .cv-featured-technologies {
+    padding: 12px 20px 16px;
+    gap: 7px;
+  }
+
+  .cv-featured-technology {
+    min-height: auto;
+
+    padding: 5px 8px;
+
+    font-size: 0.72rem;
+  }
+
+  .cv-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cv-sidebar {
+    order: 2;
+
+    padding: 22px 20px;
+
+    border-right: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .cv-main-content {
+    order: 1;
+
+    padding: 24px 20px;
+
+    min-height: 0;
+  }
+
+  .cv-section {
+    margin-bottom: 22px;
+  }
+
+  .cv-section-title,
+  .cv-main-title {
+    margin-bottom: 12px;
+
+    font-size: 0.9rem;
+  }
+
+  .cv-main-title {
+    font-size: 1rem;
+  }
+
+  .cv-profile p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .cv-skill-groups {
+    gap: 16px;
+  }
+
+  .cv-skill-group h3 {
+    font-size: 0.9rem;
+  }
+
+  .cv-skill-list {
+    gap: 7px;
+  }
+
+  .cv-skill-tag {
+    padding: 5px 8px;
+
+    font-size: 0.78rem;
+  }
+
+  .cv-compact-list {
+    gap: 8px;
+  }
+
+  .cv-compact-list li {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .cv-language-item,
+  .cv-education-degree,
+  .cv-education-institution,
+  .cv-education-status {
+    font-size: 0.88rem;
+  }
+
+  .cv-experience-list {
+    gap: 18px;
+  }
+
+  .cv-experience-item {
+    padding: 18px 16px 18px 20px;
+  }
+
+  .cv-experience-header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cv-experience-role {
+    font-size: 1.08rem;
+    line-height: 1.2;
+  }
+
+  .cv-experience-company {
+    font-size: 0.88rem;
+  }
+
+  .cv-experience-period {
+    width: fit-content;
+
+    font-size: 0.76rem;
+  }
+
+  .cv-experience-summary {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .cv-achievement-list {
+    gap: 8px;
+    padding-left: 18px;
+  }
+
+  .cv-achievement-list li {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .cv-experience-technologies {
+    gap: 7px;
+  }
+
+  .cv-experience-tag {
+    padding: 5px 8px;
+
+    font-size: 0.76rem;
+  }
+
+  .cv-solutions-section {
+    margin-top: 24px;
+  }
+
+  .cv-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cv-solution-card {
+    padding: 16px;
+  }
+
+  .cv-solution-title {
+    font-size: 0.95rem;
+  }
+
+  .cv-solution-description {
+    min-height: 0;
+
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .cv-solution-tag {
+    padding: 4px 7px;
+
+    font-size: 0.7rem;
+  }
+
+  .cv-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    padding: 14px 20px;
+
+    font-size: 0.72rem;
+  }
 }

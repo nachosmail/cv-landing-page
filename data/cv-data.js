@@ -176,8 +176,8 @@ export const cvData = {
       },
 
       role: {
-        en: "SSr Data Analyst | Smart Manufacturing Digital Leader",
-        es: "Data Analyst SSr | Digital Leader de Smart Manufacturing"
+        en: "Sr Data Analyst | Smart Manufacturing Digital Leader",
+        es: "Data Analyst Sr | Digital Leader de Smart Manufacturing"
       },
 
       alternativeRole: {
