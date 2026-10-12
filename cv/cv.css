@@ -157,6 +157,84 @@ ul {
   border-color: var(--accent);
 }
 
+.cv-format-dialog[hidden] {
+  display: none;
+}
+
+.cv-format-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+}
+
+.cv-format-dialog__backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(4, 17, 15, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.cv-format-dialog__panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(430px, 100%);
+  padding: 26px;
+
+  color: var(--text);
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow: 0 22px 60px rgba(8, 17, 31, 0.3);
+}
+
+.cv-format-dialog__panel h2 {
+  margin-bottom: 9px;
+  font-size: 1.3rem;
+}
+
+.cv-format-dialog__panel p {
+  margin-bottom: 20px;
+  color: var(--text-soft);
+}
+
+.cv-format-dialog__actions {
+  display: grid;
+  gap: 9px;
+}
+
+.cv-format-dialog__actions button {
+  padding: 11px 14px;
+
+  color: var(--text);
+  background: var(--surface-soft);
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cv-format-dialog__actions .cv-format-dialog__primary {
+  color: #04110f;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.cv-format-dialog__actions .cv-format-dialog__cancel {
+  color: var(--text-soft);
+  background: #ffffff;
+}
+
 /* ========================================================= */
 /* HOJA A4                                                   */
 /* ========================================================= */

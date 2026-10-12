@@ -66,6 +66,35 @@
     </div>
   </div>
 
+  <div
+    class="cv-format-dialog"
+    id="cv-format-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cv-format-dialog-title"
+    hidden
+    data-print-hidden
+  >
+    <div class="cv-format-dialog__backdrop" data-close-format-dialog></div>
+    <div class="cv-format-dialog__panel">
+      <h2 id="cv-format-dialog-title">Elegí el formato</h2>
+      <p id="cv-format-dialog-description">
+        Podés descargar la versión ATS o imprimir el diseño visual.
+      </p>
+      <div class="cv-format-dialog__actions">
+        <button type="button" class="cv-format-dialog__primary" id="download-ats-button">
+          Descargar formato ATS
+        </button>
+        <button type="button" id="print-visual-button">
+          Imprimir formato visual
+        </button>
+        <button type="button" class="cv-format-dialog__cancel" data-close-format-dialog>
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================================================== -->
   <!-- PÁGINA A4                                             -->
   <!-- ===================================================== -->

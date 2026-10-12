@@ -17,6 +17,24 @@ const languageButtons =
 const printButton =
   document.getElementById("print-cv-button");
 
+const formatDialog =
+  document.getElementById("cv-format-dialog");
+
+const formatDialogTitle =
+  document.getElementById("cv-format-dialog-title");
+
+const formatDialogDescription =
+  document.getElementById("cv-format-dialog-description");
+
+const downloadAtsButton =
+  document.getElementById("download-ats-button");
+
+const printVisualButton =
+  document.getElementById("print-visual-button");
+
+const closeFormatDialogButtons =
+  document.querySelectorAll("[data-close-format-dialog]");
+
 const nameElement =
   document.getElementById("cv-name");
 
@@ -125,6 +143,21 @@ const interfaceText = {
     printButton:
       "Print / Save PDF",
 
+    formatDialogTitle:
+      "Choose a format",
+
+    formatDialogDescription:
+      "Download the ATS version or print the visual design.",
+
+    downloadAts:
+      "Download ATS format",
+
+    printVisual:
+      "Print visual format",
+
+    closeDialog:
+      "Back",
+
     linkedinText:
       "LinkedIn profile",
 
@@ -162,6 +195,21 @@ const interfaceText = {
 
     printButton:
       "Imprimir / Guardar PDF",
+
+    formatDialogTitle:
+      "Elegí el formato",
+
+    formatDialogDescription:
+      "Descargá la versión ATS o imprimí el diseño visual.",
+
+    downloadAts:
+      "Descargar formato ATS",
+
+    printVisual:
+      "Imprimir formato visual",
+
+    closeDialog:
+      "Volver",
 
     linkedinText:
       "Perfil de LinkedIn",
@@ -918,6 +966,24 @@ function renderFooter(data) {
 
   printButton.textContent =
     labels.printButton;
+
+  formatDialogTitle.textContent =
+    labels.formatDialogTitle;
+
+  formatDialogDescription.textContent =
+    labels.formatDialogDescription;
+
+  downloadAtsButton.textContent =
+    labels.downloadAts;
+
+  printVisualButton.textContent =
+    labels.printVisual;
+
+  closeFormatDialogButtons.forEach((button) => {
+    if (button.tagName === "BUTTON") {
+      button.textContent = labels.closeDialog;
+    }
+  });
 }
 
 function updateLanguageButtons(
@@ -1105,17 +1171,14 @@ languageButtons.forEach(
 printButton.addEventListener(
   "click",
   () => {
-    const useAtsFormat = window.confirm(
-      currentLanguage === "es"
-        ? "¿Querés descargar el CV en formato ATS?\n\nAceptar: formato ATS\nCancelar: imprimir o guardar el formato visual"
-        : "Would you like to download the ATS-formatted CV?\n\nOK: ATS format\nCancel: print or save the visual format"
-    );
+    formatDialog.hidden = false;
+    downloadAtsButton.focus();
+  }
+);
 
-    if (!useAtsFormat) {
-      window.print();
-      return;
-    }
-
+downloadAtsButton.addEventListener(
+  "click",
+  () => {
     const languageCode =
       currentLanguage === "es"
         ? "ES"
@@ -1131,8 +1194,32 @@ printButton.addEventListener(
     document.body.append(downloadLink);
     downloadLink.click();
     downloadLink.remove();
+
+    formatDialog.hidden = true;
   }
 );
+
+printVisualButton.addEventListener(
+  "click",
+  () => {
+    formatDialog.hidden = true;
+    window.print();
+  }
+);
+
+closeFormatDialogButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    formatDialog.hidden = true;
+    printButton.focus();
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !formatDialog.hidden) {
+    formatDialog.hidden = true;
+    printButton.focus();
+  }
+});
 
 window.addEventListener(
   "resize",
