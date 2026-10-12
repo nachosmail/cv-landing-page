@@ -29,8 +29,8 @@ const formatDialogDescription =
 const downloadAtsButton =
   document.getElementById("download-ats-button");
 
-const printVisualButton =
-  document.getElementById("print-visual-button");
+const downloadVisualButton =
+  document.getElementById("download-visual-button");
 
 const closeFormatDialogButtons =
   document.querySelectorAll("[data-close-format-dialog]");
@@ -147,13 +147,13 @@ const interfaceText = {
       "Choose a format",
 
     formatDialogDescription:
-      "Download the ATS version or print the visual design.",
+      "Download the ATS version or the visual design.",
 
     downloadAts:
       "Download ATS format",
 
-    printVisual:
-      "Print visual format",
+    downloadVisual:
+      "Download visual format",
 
     closeDialog:
       "Back",
@@ -200,13 +200,13 @@ const interfaceText = {
       "Elegí el formato",
 
     formatDialogDescription:
-      "Descargá la versión ATS o imprimí el diseño visual.",
+      "Descargá la versión ATS o el diseño visual.",
 
     downloadAts:
       "Descargar formato ATS",
 
-    printVisual:
-      "Imprimir formato visual",
+    downloadVisual:
+      "Descargar formato visual",
 
     closeDialog:
       "Volver",
@@ -976,8 +976,8 @@ function renderFooter(data) {
   downloadAtsButton.textContent =
     labels.downloadAts;
 
-  printVisualButton.textContent =
-    labels.printVisual;
+  downloadVisualButton.textContent =
+    labels.downloadVisual;
 
   closeFormatDialogButtons.forEach((button) => {
     if (button.tagName === "BUTTON") {
@@ -1176,34 +1176,41 @@ printButton.addEventListener(
   }
 );
 
-downloadAtsButton.addEventListener(
-  "click",
-  () => {
+function downloadCvPdf(format) {
     const languageCode =
       currentLanguage === "es"
         ? "ES"
         : "EN";
+    const formatSuffix =
+      format === "ats"
+        ? "-ATS"
+        : "";
     const downloadLink =
       document.createElement("a");
 
     downloadLink.href =
-      `../dist/Ignacio-Smail-CV-ATS-${languageCode}.pdf`;
+      `../dist/Ignacio-Smail-CV${formatSuffix}-${languageCode}.pdf`;
     downloadLink.download =
-      `Ignacio-Smail-CV-ATS-${languageCode}.pdf`;
+      `Ignacio-Smail-CV${formatSuffix}-${languageCode}.pdf`;
 
     document.body.append(downloadLink);
     downloadLink.click();
     downloadLink.remove();
 
     formatDialog.hidden = true;
+}
+
+downloadAtsButton.addEventListener(
+  "click",
+  () => {
+    downloadCvPdf("ats");
   }
 );
 
-printVisualButton.addEventListener(
+downloadVisualButton.addEventListener(
   "click",
   () => {
-    formatDialog.hidden = true;
-    window.print();
+    downloadCvPdf("visual");
   }
 );
 
