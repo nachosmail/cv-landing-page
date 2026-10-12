@@ -1432,6 +1432,50 @@ function warnAboutUnconfiguredLinks() {
 }
 
 /* ========================================================= */
+/* SELECCIÓN DE FORMATO DEL CV                             */
+/* ========================================================= */
+
+function getCvDownloadPath(language, useAtsFormat) {
+  const languageCode = language === "es" ? "ES" : "EN";
+  const formatSuffix = useAtsFormat ? "-ATS" : "";
+
+  return `dist/Ignacio-Smail-CV${formatSuffix}-${languageCode}.pdf`;
+}
+
+function askForAtsFormat(language) {
+  return window.confirm(
+    language === "es"
+      ? "\u00bfQuerés descargar el CV en formato ATS?\n\nAceptar: formato ATS\nCancelar: formato visual"
+      : "Would you like to download the ATS-formatted CV?\n\nOK: ATS format\nCancel: visual format"
+  );
+}
+
+function initializeCvDownloadChoices() {
+  const downloadLinks = document.querySelectorAll(
+    "#download-cv-link, [data-cv-download-lang]"
+  );
+
+  downloadLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const language = link.dataset.cvDownloadLang || currentLanguage;
+      const downloadPath = getCvDownloadPath(
+        language,
+        askForAtsFormat(language)
+      );
+      const temporaryLink = document.createElement("a");
+
+      temporaryLink.href = downloadPath;
+      temporaryLink.download = downloadPath.split("/").pop();
+      document.body.append(temporaryLink);
+      temporaryLink.click();
+      temporaryLink.remove();
+    });
+  });
+}
+
+/* ========================================================= */
 /* INICIALIZACIÓN                                            */
 /* ========================================================= */
 
@@ -1449,6 +1493,7 @@ function initializeApplication() {
   initializeRevealAnimations();
   initializeActiveNavigation();
   warnAboutUnconfiguredLinks();
+  initializeCvDownloadChoices();
 }
 
 document.addEventListener(
