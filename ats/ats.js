@@ -46,6 +46,26 @@ function renderExperience(experience) {
   }));
 }
 
+function renderSolutions(solutions) {
+  byId("solutions").replaceChildren(...solutions.map((solution) => {
+    const article = document.createElement("article");
+    article.className = "solution";
+
+    const heading = document.createElement("h3");
+    heading.textContent = solution.title;
+
+    const description = document.createElement("p");
+    description.textContent = solution.description;
+
+    const technologies = document.createElement("p");
+    technologies.className = "solution-technologies";
+    technologies.textContent = solution.technologies.join(" | ");
+
+    article.append(heading, description, technologies);
+    return article;
+  }));
+}
+
 function renderEducation(education) {
   byId("education").replaceChildren(...education.map((item) => {
     const block = document.createElement("div");
@@ -94,6 +114,7 @@ function render() {
   byId("competencies").textContent = data.coreCompetencies.join(" | ");
   byId("tools").textContent = data.tools.join(" | ");
   renderExperience(data.experience);
+  renderSolutions(data.selectedSolutions);
   renderEducation(data.education);
   renderLanguages(data.languages);
 

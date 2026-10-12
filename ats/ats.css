@@ -95,6 +95,19 @@ p {
   break-inside: avoid;
 }
 
+.solution {
+  margin-bottom: 2.5mm;
+  break-inside: avoid;
+}
+
+.solution p {
+  margin-bottom: 0.7mm;
+}
+
+.solution-technologies {
+  font-weight: 700;
+}
+
 .job-meta {
   margin-bottom: 0.7mm;
   font-weight: 700;

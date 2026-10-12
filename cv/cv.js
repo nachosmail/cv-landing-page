@@ -1105,7 +1105,32 @@ languageButtons.forEach(
 printButton.addEventListener(
   "click",
   () => {
-    window.print();
+    const useAtsFormat = window.confirm(
+      currentLanguage === "es"
+        ? "¿Querés descargar el CV en formato ATS?\n\nAceptar: formato ATS\nCancelar: imprimir o guardar el formato visual"
+        : "Would you like to download the ATS-formatted CV?\n\nOK: ATS format\nCancel: print or save the visual format"
+    );
+
+    if (!useAtsFormat) {
+      window.print();
+      return;
+    }
+
+    const languageCode =
+      currentLanguage === "es"
+        ? "ES"
+        : "EN";
+    const downloadLink =
+      document.createElement("a");
+
+    downloadLink.href =
+      `../dist/Ignacio-Smail-CV-ATS-${languageCode}.pdf`;
+    downloadLink.download =
+      `Ignacio-Smail-CV-ATS-${languageCode}.pdf`;
+
+    document.body.append(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
   }
 );
 
